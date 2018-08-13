@@ -1,0 +1,7 @@
+@Role("System Admin")
+persistent object SystemAdmin {
+  string firstName;
+  string lastName;
+  string mobileNumber;
+  string emailAddress;
+}

@@ -1,0 +1,11 @@
+unit UserInvite;
+
+@InviteUser
+SystemAdmin inviteSystemAdmin() {
+  SystemAdmin systemAdmin = SystemAdmin:new();
+  systemAdmin.firstName = "Test";
+  systemAdmin.lastName = "User";
+  systemAdmin.mobileNumber = "278212345678";
+  systemAdmin.emailAddress = "user@domain.com";
+  return systemAdmin;
+}
