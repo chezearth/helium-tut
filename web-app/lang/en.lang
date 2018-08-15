@@ -1,4 +1,6 @@
 view_heading.system_admin_home = System Admin Home
 menu_item.system_admin_home = System Admin Home
 info.welcome = Welcome:
-info.system_admin_welcome = Welcome System Admin
+info.system_admin_welcome = Welcome {SystemAdminHome:firstName} {SystemAdminHome:lastName}
+info.mobile_number = Mobile number:
+info.email_address = E-mail address:

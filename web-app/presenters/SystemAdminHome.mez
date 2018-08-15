@@ -1,0 +1,15 @@
+unit SystemAdminHome;
+
+SystemAdmin currentSystemAdminUser;
+string firstName;
+string lastName;
+
+void  init() {
+  currentSystemAdminUser = SystemAdmin:user();
+  firstName = currentSystemAdminUser.firstName;
+  lastName = currentSystemAdminUser.lastName;
+}
+
+string getSystemAdminEmailAddress() {
+  return currentSystemAdminUser.emailAddress;
+}

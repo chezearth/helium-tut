@@ -2,7 +2,7 @@
 <ui xmlns="http://uiprogram.mezzanine.com/View"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://uiprogram.mezzanine.com/View View.xsd">
-    <view label="view_heading.system_admin_home">
+    <view label="view_heading.system_admin_home" unit="SystemAdminHome" init="init">
 
         <!-- Menu item for System Admin role -->
         <menuitem label="menu_item.system_admin_home" icon="UserProfile" order="0">
@@ -11,5 +11,17 @@
 
         <!-- Info wdiget to display message from language file -->
         <info label="info.welcome" value="info.system_admin_welcome"/>
+
+        <!-- Info widget can also be bound to a unit variable -->
+        <info label="info.mobile_number">
+            <binding variable="currentSystemAdminUser">
+              <attribute name="mobileNumber"/>
+            </binding>
+        </info>
+
+        <!-- Info widget can also be bound to function -->
+        <info label="info.email_address">
+            <binding function="getSystemAdminEmailAddress"/>
+        </info>
     </view>
 </ui>
