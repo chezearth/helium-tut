@@ -9,3 +9,7 @@ void init() {
 DSL_VIEWS viewUser() {
   return DSL_VIEWS.SystemAdminUserDetails;
 }
+
+DSL_VIEWS back() {
+  return DSL_VIEWS.SystemAdminUserMgmt;
+}

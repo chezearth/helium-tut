@@ -12,3 +12,4 @@ info.last_name = Last name
 table_title.system_admins = System Administrators
 column_heading.name = Name
 button.view = View
+action.back = Back

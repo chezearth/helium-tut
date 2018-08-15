@@ -4,6 +4,7 @@
     xsi:schemaLocation="http://uiprogram.mezzanine.com/View View.xsd">
 
     <view label="view_heading.system_admin_user_details" unit="SystemAdminUserMgmt">
+        <action label="action.back" action="back" />
         <info label="info.first_name">
             <binding variable="selectedSystemAdmin">
                 <attribute name="firstName"/>
