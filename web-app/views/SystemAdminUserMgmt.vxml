@@ -4,9 +4,35 @@
     xsi:schemaLocation="http://uiprogram.mezzanine.com/View View.xsd">
     <view label="view_heading.system_admin_user_management" unit="SystemAdminUserMgmt" init="init">
 
-        <menuitem label="menu_item.system_admin_user_management" icon="UserProfile" order="1">
+        <menuitem label="menu_item.system_admin_user_management" icon="UsersProfiles" order="1">
             <userRole>System Admin</userRole>
         </menuitem>
+
+        <textfield label="textfield.first_name">
+            <binding variable="formSystemAdmin">
+                <attribute name="firstName"/>
+            </binding>
+        </textfield>
+
+        <textfield label="textfield.last_name">
+            <binding variable="formSystemAdmin">
+                <attribute name="lastName"/>
+            </binding>
+        </textfield>
+
+        <textfield label="textfield.mobile_number">
+            <binding variable="formSystemAdmin">
+                <attribute name="mobileNumber"/>
+            </binding>
+        </textfield>
+
+        <textfield label="textfield.email_address">
+            <binding variable="formSystemAdmin">
+                <attribute name="emailAddress"/>
+            </binding>
+        </textfield>
+
+        <submit label="submit.save" action="saveUser"/>
 
         <table title="table_title.system_admins">
             <collectionSource variable="systemAdmins"/>

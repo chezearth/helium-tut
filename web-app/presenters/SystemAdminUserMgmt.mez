@@ -1,6 +1,7 @@
 unit SystemAdminUserMgmt;
 SystemAdmin[] systemAdmins;
 SystemAdmin selectedSystemAdmin;
+SystemAdmin formSystemAdmin;
 
 void init() {
   systemAdmins = SystemAdmin:all();
@@ -11,5 +12,9 @@ DSL_VIEWS viewUser() {
 }
 
 DSL_VIEWS back() {
+  return DSL_VIEWS.SystemAdminUserMgmt;
+}
+
+DSL_VIEWS saveUser() {
   return DSL_VIEWS.SystemAdminUserMgmt;
 }
