@@ -1,6 +1,14 @@
 view_heading.system_admin_home = System Admin Home
+view_heading.system_admin_user_management = System Admin User Management
+view_heading.system_admin_user_details = System Admin User Details
 menu_item.system_admin_home = System Admin Home
+menu_item.system_admin_user_management = System Admin User Management
 info.welcome = Welcome:
 info.system_admin_welcome = Welcome {SystemAdminHome:firstName} {SystemAdminHome:lastName}
 info.mobile_number = Mobile number:
 info.email_address = E-mail address:
+info.first_name = First name
+info.last_name = Last name
+table_title.system_admins = System Administrators
+column_heading.name = Name
+button.view = View

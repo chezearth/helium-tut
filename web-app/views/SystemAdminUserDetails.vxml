@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui xmlns="http://uiprogram.mezzanine.com/View"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uiprogram.mezzanine.com/View View.xsd">
+
+    <view label="view_heading.system_admin_user_details" unit="SystemAdminUserMgmt">
+        <info label="info.first_name">
+            <binding variable="selectedSystemAdmin">
+                <attribute name="firstName"/>
+            </binding>
+        </info>
+        <info label="info.last_name">
+            <binding variable="selectedSystemAdmin">
+                <attribute name="lastName"/>
+            </binding>
+        </info>
+        <info label="info.mobile_number">
+            <binding variable="selectedSystemAdmin">
+                <attribute name="mobileNumber"/>
+            </binding>
+        </info>
+        <info label="info.email_address">
+            <binding variable="selectedSystemAdmin">
+                <attribute name="emailAddress"/>
+            </binding>
+        </info>
+    </view>
+
+</ui>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui xmlns="http://uiprogram.mezzanine.com/View"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uiprogram.mezzanine.com/View View.xsd">
+    <view label="view_heading.system_admin_user_management" unit="SystemAdminUserMgmt" init="init">
+
+        <menuitem label="menu_item.system_admin_user_management" icon="UserProfile" order="1">
+            <userRole>System Admin</userRole>
+        </menuitem>
+
+        <table title="table_title.system_admins">
+            <collectionSource variable="systemAdmins"/>
+            <column heading="column_heading.name">
+                <attributeName>firstName</attributeName>
+                <attributeName>lastName</attributeName>
+            </column>
+            <rowAction label="button.view" action="viewUser">
+                <binding variable="selectedSystemAdmin" />
+            </rowAction>
+        </table>
+
+    </view>
+</ui>

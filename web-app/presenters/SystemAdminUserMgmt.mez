@@ -1,0 +1,11 @@
+unit SystemAdminUserMgmt;
+SystemAdmin[] systemAdmins;
+SystemAdmin selectedSystemAdmin;
+
+void init() {
+  systemAdmins = SystemAdmin:all();
+}
+
+DSL_VIEWS viewUser() {
+  return DSL_VIEWS.SystemAdminUserDetails;
+}
