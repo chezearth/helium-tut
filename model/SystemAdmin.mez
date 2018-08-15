@@ -1,5 +1,6 @@
 @Role("System Admin")
 persistent object SystemAdmin {
+  @requiredFieldValidator("validator.required_field")
   string firstName;
   string lastName;
   string mobileNumber;
