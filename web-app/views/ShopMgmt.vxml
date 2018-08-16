@@ -6,7 +6,7 @@
     <view label="view_heading.shop_management" unit="ShopMgmt" init="init">
 
         <menuitem label="menu_item.shop_management" icon="Shop" order="2">
-            <userRole>SystemAdmin</userRole>
+            <userRole>System Admin</userRole>
         </menuitem>
 
         <textfield label="textfield.name">
@@ -20,6 +20,25 @@
                 <attribute name="description"/>
             </binding>
         </textfield>
+
+        <textfield label="textfield.longitude">
+            <binding variable="shop">
+                <attribute name="longitude"/>
+            </binding>
+        </textfield>
+
+        <textfield label="textfield.latitude">
+            <binding variable="shop">
+                <attribute name="latitude"/>
+            </binding>
+        </textfield>
+
+        <select label="select.state">
+            <binding variable="shop">
+                <attribute name="state"/>
+            </binding>
+            <enum>STATES</enum>
+        </select>
 
         <submit label="submit.save" action="saveShop"/>
 
@@ -38,7 +57,7 @@
             <rowAction label="button.edit" action="editShop">
                 <binding variable="shop" />
             </rowAction>
-            </rowAction label="button.remove" action="deleteShop">
+            <rowAction label="button.remove" action="deleteShop">
                 <binding variable="shop" />
                 <confirm subject="confirm_subject.removing_shop" body="confirm_body.removing_shop" />
             </rowAction>

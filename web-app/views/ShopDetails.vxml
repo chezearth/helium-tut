@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://uiprogram.mezzanine.com/View View.xsd">
 
-    <view label="view_heading.shop_details", unit="ShopMgmt">
+    <view label="view_heading.shop_details" unit="ShopMgmt">
         <action label="action.back" action="back" />
 
         <info label="info.shop_name">
@@ -14,7 +14,7 @@
 
         <info label="info.shop_description">
             <binding variable="shop">
-                <attribute name="description"/>
+                <attribute name="description" />
             </binding>
         </info>
 

@@ -7,7 +7,18 @@ persistent object Shop {
   @requiredFieldValidator("validator.required_field")
   string description;
 
+  @requiredFieldValidator("validator.required_field")
+  decimal longitude;
+
+  @requiredFieldValidator("validator.required_field")
+  decimal latitude;
+
+  @requiredFieldValidator("validator.required_field")
+  STATES state;
+
   // Meta information
   bool deleted;
-  
+  datetime createdOn;
+  datetime updatedOn;
+
 }
