@@ -50,6 +50,7 @@
             </rowAction>
             <rowAction label="button.remove" action="removeUser">
                 <binding variable="selectedSystemAdmin" />
+                <confirm subject="confirm_subject.removing_user" body="confirm_body.removing_user" />
             </rowAction>
 
         </table>

@@ -33,7 +33,12 @@ DSL_VIEWS saveUser() {
 }
 
 DSL_VIEWS removeUser() {
-  selectedSystemAdmin.deleted = true;
+  if (selectedSystemAdmin == SystemAdmin:user()) {
+    Mez:alert("alert.currently_logged_in");
+  } else {
+    selectedSystemAdmin.deleted = true;
+    selectedSystemAdmin.removeRole();
+  }
   init();
   return null;
 }
