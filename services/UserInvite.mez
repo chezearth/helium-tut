@@ -7,5 +7,6 @@ SystemAdmin inviteSystemAdmin() {
   systemAdmin.lastName = "User";
   systemAdmin.mobileNumber = "278212345678";
   systemAdmin.emailAddress = "user@domain.com";
+  systemAdmin.deleted = false;
   return systemAdmin;
 }

@@ -36,16 +36,22 @@
 
         <table title="table_title.system_admins" defaultSortColumn="0" defaultSortDirection="ascending">
             <collectionSource variable="systemAdmins"/>
+
             <column heading="column_heading.name">
                 <attributeName>firstName</attributeName>
                 <attributeName>lastName</attributeName>
             </column>
+
             <rowAction label="button.view" action="viewUser">
                 <binding variable="selectedSystemAdmin" />
             </rowAction>
             <rowAction label="button.edit" action="editUser">
                 <binding variable="formSystemAdmin" />
             </rowAction>
+            <rowAction label="button.remove" action="removeUser">
+                <binding variable="selectedSystemAdmin" />
+            </rowAction>
+
         </table>
 
     </view>

@@ -6,7 +6,7 @@ SystemAdmin formSystemAdmin;
 bool editing;
 
 void init() {
-  systemAdmins = SystemAdmin:all();
+  systemAdmins = SystemAdmin:equals(deleted, false);
   formSystemAdmin = SystemAdmin:new();
   editing = false;
 }
@@ -28,6 +28,12 @@ DSL_VIEWS saveUser() {
   if (editing == false) {
     formSystemAdmin.invite(formSystemAdmin.mobileNumber);
   }
+  init();
+  return null;
+}
+
+DSL_VIEWS removeUser() {
+  selectedSystemAdmin.deleted = true;
   init();
   return null;
 }

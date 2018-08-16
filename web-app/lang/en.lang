@@ -1,5 +1,6 @@
 action.back = Back
 button.edit = Edit
+button.remove = Remove
 button.view = View
 column_heading.name = Name
 info.email_address = E-mail address:
