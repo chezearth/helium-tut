@@ -34,7 +34,7 @@
 
         <submit label="submit.save" action="saveUser"/>
 
-        <table title="table_title.system_admins">
+        <table title="table_title.system_admins" defaultSortColumn="0" defaultSortDirection="ascending">
             <collectionSource variable="systemAdmins"/>
             <column heading="column_heading.name">
                 <attributeName>firstName</attributeName>
