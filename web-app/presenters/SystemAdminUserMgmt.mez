@@ -3,9 +3,16 @@ SystemAdmin[] systemAdmins;
 SystemAdmin selectedSystemAdmin;
 SystemAdmin formSystemAdmin;
 
+bool editing;
+
 void init() {
-  formSystemAdmin = SystemAdmin:new();
   systemAdmins = SystemAdmin:all();
+  formSystemAdmin = SystemAdmin:new();
+  editing = false;
+}
+
+void editUser() {
+  editing = true;
 }
 
 DSL_VIEWS viewUser() {
@@ -18,7 +25,9 @@ DSL_VIEWS back() {
 
 DSL_VIEWS saveUser() {
   formSystemAdmin.save();
-  formSystemAdmin.invite(formSystemAdmin.mobileNumber);
+  if (editing == false) {
+    formSystemAdmin.invite(formSystemAdmin.mobileNumber);
+  }
   init();
   return null;
 }

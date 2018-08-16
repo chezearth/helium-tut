@@ -43,6 +43,9 @@
             <rowAction label="button.view" action="viewUser">
                 <binding variable="selectedSystemAdmin" />
             </rowAction>
+            <rowAction label="button.edit" action="editUser">
+                <binding variable="formSystemAdmin" />
+            </rowAction>
         </table>
 
     </view>
