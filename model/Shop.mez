@@ -1,0 +1,13 @@
+persistent object Shop {
+
+  // Basic shop Details
+  @requiredFieldValidator("validator.required_field")
+  string name;
+
+  @requiredFieldValidator("validator.required_field")
+  string description;
+
+  // Meta information
+  bool deleted;
+  
+}

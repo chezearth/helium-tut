@@ -1,0 +1,41 @@
+unit ShopMgmt;
+
+Shop shop;
+
+bool editing;
+
+
+void init() {
+  shop = Shop:new();
+  editing = false;
+}
+
+Shop[] getShops() {
+  return Shop:equals(deleted, false);
+}
+
+DSL_VIEWS saveShop() {
+  shop.deleted = false;
+  shop.save();
+  init();
+  return null;
+}
+
+DSL_VIEWS viewShop() {
+  return DSL_VIEWS.ShopDetails;
+}
+
+DSL_VIEWS back() {
+  return DSL_VIEWS.ShopMgmt;
+}
+
+DSL_VIEWS editShop() {
+  editing = true;
+  return null;
+}
+
+DSL_VIEWS deleteShop() {
+  shop.deleted = true;
+  init();
+  return null;
+}

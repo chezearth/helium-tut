@@ -2,6 +2,7 @@
 <ui xmlns="http://uiprogram.mezzanine.com/View"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://uiprogram.mezzanine.com/View View.xsd">
+
     <view label="view_heading.system_admin_user_management" unit="SystemAdminUserMgmt" init="init">
 
         <menuitem label="menu_item.system_admin_user_management" icon="UsersProfiles" order="1">
@@ -56,4 +57,5 @@
         </table>
 
     </view>
+    
 </ui>

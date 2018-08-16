@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui xmlns="http://uiprogram.mezzanine.com/View"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uiprogram.mezzanine.com/View View.xsd">
+
+    <view label="view_heading.shop_management" unit="ShopMgmt" init="init">
+
+        <menuitem label="menu_item.shop_management" icon="Shop" order="2">
+            <userRole>SystemAdmin</userRole>
+        </menuitem>
+
+        <textfield label="textfield.name">
+            <binding variable="shop">
+                <attribute name="name"/>
+            </binding>
+        </textfield>
+
+        <textfield label="textfield.description">
+            <binding variable="shop">
+                <attribute name="description"/>
+            </binding>
+        </textfield>
+
+        <submit label="submit.save" action="saveShop"/>
+
+        <table title="table_title.shops">
+            <collectionSource function="getShops"/>
+            <column heading="column_heading.name">
+                <attributeName>name</attributeName>
+            </column>
+            <column heading="column_heading.description">
+                <attributeName>description</attributeName>
+            </column>
+
+            <rowAction label="button.view" action="viewShop">
+                <binding variable="shop" />
+            </rowAction>
+            <rowAction label="button.edit" action="editShop">
+                <binding variable="shop" />
+            </rowAction>
+            </rowAction label="button.remove" action="deleteShop">
+                <binding variable="shop" />
+                <confirm subject="confirm_subject.removing_shop" body="confirm_body.removing_shop" />
+            </rowAction>
+        </table>
+
+    </view>
+
+</ui>

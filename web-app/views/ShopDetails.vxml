@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui xmlns="http://uiprogram.mezzanine.com/View"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uiprogram.mezzanine.com/View View.xsd">
+
+    <view label="view_heading.shop_details", unit="ShopMgmt">
+        <action label="action.back" action="back" />
+
+        <info label="info.shop_name">
+            <binding variable="shop">
+                <attribute name="name" />
+            </binding>
+        </info>
+
+        <info label="info.shop_description">
+            <binding variable="shop">
+                <attribute name="description"/>
+            </binding>
+        </info>
+
+    </view>
+
+</ui>
