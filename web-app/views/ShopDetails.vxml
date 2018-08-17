@@ -18,6 +18,12 @@
             </binding>
         </info>
 
+        <info label="info.shop_code">
+            <binding variable="shop">
+                <attribute name="shopCode" />
+            </binding>
+        </info>
+
     </view>
 
 </ui>

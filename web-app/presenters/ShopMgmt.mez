@@ -7,12 +7,21 @@ bool editing;
 
 void init() {
   shop = Shop:new();
+  shop.shopCode = generateShopCode();
   editing = false;
 }
 
 
 Shop[] getShops() {
   return Shop:equals(deleted, false);
+}
+
+
+string generateShopCode() {
+  string shopId = shop._id;
+  string[] idParts = String:split(shopId, "-");
+  int randomNumber = Math:random() * 100000;
+  return String:concat(idParts.get(0), "-", randomNumber);
 }
 
 
