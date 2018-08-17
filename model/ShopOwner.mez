@@ -1,5 +1,5 @@
-@Role("System Admin")
-persistent object SystemAdmin {
+@Role("Shop Owner")
+persistent object ShopOwner {
 
   @requiredFieldValidator("validator.required_field")
   string firstName;
@@ -13,5 +13,4 @@ persistent object SystemAdmin {
   string emailAddress;
 
   bool deleted;
-
 }
