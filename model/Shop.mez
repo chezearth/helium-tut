@@ -25,7 +25,7 @@ persistent object Shop {
   bool deleted;
 
   // Related shop Owner
-  @OneToMany
-  ShopOwner owners via shop;
+  @ManyToMany
+  ShopOwner owners via shops;
 
 }

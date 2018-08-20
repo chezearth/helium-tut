@@ -56,6 +56,6 @@ DSL_VIEWS removeUser() {
 }
 
 
-// Shop[] getShopOwnerShops() {
-  // return shopOwner.shops;
-// }
+Shop[] getShopOwnerShops() {
+  return shopOwner.shops;
+}

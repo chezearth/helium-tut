@@ -37,6 +37,16 @@
             <!-- </binding> -->
         <!-- </info> -->
 
+        <table title="table_title.shop_owner_shops">
+          <collectionSource function="getShopOwnerShops"/>
+          <column heading="column_heading.name">
+              <attributeName>name</attributeName>
+          </column>
+          <column heading="column_heading.description">
+              <attributeName>description</attributeName>
+          </column>
+        </table>
+
     </view>
 
 </ui>

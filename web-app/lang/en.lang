@@ -49,6 +49,7 @@ select.shop_owner = Shop owner:
 submit.add_shop_owner = Add shop owner
 submit.save = Save
 table_title.shop_owners = Shop Owners
+table_title.shop_owner_shops = Owner's shops
 table_title.shops = Shops
 table_title.system_admins = System Administrators
 textfield.description = Description:
