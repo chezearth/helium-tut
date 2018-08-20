@@ -31,6 +31,12 @@
             </binding>
         </info>
 
+        <!-- <info label="info.shop"> -->
+            <!-- <binding variable="shopOwner"> -->
+                <!-- <attribute name="shop.name"/> -->
+            <!-- </binding> -->
+        <!-- </info> -->
+
     </view>
 
 </ui>

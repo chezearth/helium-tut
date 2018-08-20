@@ -2,21 +2,21 @@ unit ShopMgmt;
 
 Shop shop;
 
+ShopOwner ownerToAdd;
+ShopOwner ownerToRemove;
+
 bool editing;
 
 
 void init() {
   shop = Shop:new();
+  ownerToAdd = null;
   shop.shopCode = generateShopCode();
   editing = false;
 }
 
 
-Shop[] getShops() {
-  return Shop:equals(deleted, false);
-}
-
-
+// helper to generate random and unique codes for shops
 string generateShopCode() {
   string shopId = shop._id;
   string[] idParts = String:split(shopId, "-");
@@ -25,7 +25,50 @@ string generateShopCode() {
 }
 
 
+// Collection source for data table
+Shop[] getShops() {
+  return Shop:equals(deleted, false);
+}
+
+
+// Return all shop owners in the system
+ShopOwner[] getAllShopOwners() {
+  return ShopOwner:equals(deleted, false);
+}
+
+
+// Return all shop owners that are linked to the current shops
+ShopOwner[] getCurrentShopOwners() {
+  return shop.owners;
+}
+
+
+string addShopOwner() {
+  shop.owners.append(ownerToAdd);
+  ownerToAdd = null;
+  return null;
+}
+
+
+string removeShopOwner() {
+  ShopOwner[] shopOwners = getAllShopOwners();
+  for(int i = 0; i < shopOwners.length(); i++) {
+    ShopOwner currentShopOwner = shopOwners.get(i);
+    if(ownerToRemove._id == currentShopOwner._id) {
+      shop.owners.remove(i);
+    }
+  }
+  return null;
+}
+
+
 DSL_VIEWS saveShop() {
+
+//  if (shop.owner == null) {
+//    Mez:alertError("alert.shop_owner_required");
+//    return null;
+//  }
+
   if (editing == true) {
     // When editing we record the current time
     shop.updatedOn = Mez:now();
@@ -39,6 +82,7 @@ DSL_VIEWS saveShop() {
 
   init();
   return null;
+
 }
 
 

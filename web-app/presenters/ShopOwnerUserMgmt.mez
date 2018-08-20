@@ -11,7 +11,7 @@ void init() {
 
 
 DSL_VIEWS viewUser() {
-  return DSL_VIEWS.ShopOwnerUserDetails;
+  return DSL_VIEWS.ShopOwnerDetails;
 }
 
 
@@ -31,6 +31,7 @@ DSL_VIEWS saveUser() {
   if (editing == false) {
     shopOwner.invite(shopOwner.mobileNumber);
   }
+
   init();
   return null;
 }
@@ -49,6 +50,12 @@ DSL_VIEWS removeUser() {
     shopOwner.deleted = true;
     shopOwner.removeRole();
   }
+
   init();
   return null;
 }
+
+
+// Shop[] getShopOwnerShops() {
+  // return shopOwner.shops;
+// }

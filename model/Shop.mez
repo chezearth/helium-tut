@@ -1,12 +1,15 @@
 persistent object Shop {
 
-  // Basic shop Details
+  // Basic shop information
+  string shopCode;
+
   @requiredFieldValidator("validator.required_field")
   string name;
 
   @requiredFieldValidator("validator.required_field")
   string description;
 
+  // location
   @requiredFieldValidator("validator.required_field")
   decimal longitude;
 
@@ -16,11 +19,13 @@ persistent object Shop {
   @requiredFieldValidator("validator.required_field")
   STATES state;
 
-  string shopCode;
-
   // Meta information
-  bool deleted;
   datetime createdOn;
   datetime updatedOn;
+  bool deleted;
+
+  // Related shop Owner
+  @OneToMany
+  ShopOwner owners via shop;
 
 }

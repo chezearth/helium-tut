@@ -15,19 +15,19 @@
             </binding>
         </textfield>
 
-        <textfield label="textfield.last_name" datatype="text">
+        <textfield label="textfield.last_name">
             <binding variable="shopOwner">
                 <attribute name="lastName" />
             </binding>
         </textfield>
 
-        <textfield label="textfield.email_address" datatype="text">
+        <textfield label="textfield.email_address">
             <binding variable="shopOwner">
                 <attribute name="emailAddress" />
             </binding>
         </textfield>
 
-        <textfield label="textfield.mobile_number" datatype="text">
+        <textfield label="textfield.mobile_number">
             <binding variable="shopOwner">
                 <attribute name="mobileNumber" />
             </binding>
