@@ -11,7 +11,7 @@
 
         <table csvExport="disabled">
 
-            <collectionSource variable="MenuItems"/>
+            <collectionSource variable="menuItems"/>
 
             <column heading="column_heading.user_type">
                 <attributeName>label</attributeName>

@@ -37,6 +37,35 @@ void initMenu() {
 }
 
 
+// Helper functions to count users in the system
+int countSystemAdmins() {
+  SystemAdmin[] systemAdmins = SystemAdmin:equals(deleted, false);
+  return systemAdmins.length();
+}
+
+int countShopOwners() {
+  ShopOwner[] shopOwners = ShopOwner:equals(deleted, false);
+  return shopOwners.length();
+}
+
+int countFarmers() {
+  Farmer[] farmers = Farmer:equals(deleted, false);
+  return farmers.length();
+}
+
+
+// Helper function to create menu item
+MenuItem createMenuItem(string label, DSL_VIEWS navigationDestination, int userCount) {
+  MenuItem menuItem:new();
+  menuItem.label = label;
+  menuItem.description = userCount;
+  menuItem.navigationDestination = navigationDestination;
+  return menuItem;
+}
+
+
+
+
 // Navigate to the view associated with the select menu item
 DSL_VIEWS selectMenuItem() {
   return menuItem.navigationDestination;
