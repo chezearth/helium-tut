@@ -5,9 +5,11 @@
 
     <view label="view_heading.farmer_user_management" unit="FarmerUserMgmt" init="init">
 
-        <menuitem label="menu_item.farmer_user_management" icon="UsersProfiles" order="5">
-            <userRole>System Admin</userRole>
-        </menuitem>
+        <!-- <menuitem label="menu_item.farmer_user_management" icon="UsersProfiles" order="5"> -->
+            <!-- <userRole>System Admin</userRole> -->
+        <!-- </menuitem> -->
+
+        <action label="action.back" action="backToUserMgmtMenu"/>
 
         <textfield label="textfield.first_name">
             <binding variable="farmer">

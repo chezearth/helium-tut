@@ -25,6 +25,11 @@ DSL_VIEWS back() {
 }
 
 
+DSL_VIEWS backToUserMgmtMenu() {
+  return DSL_VIEWS.UserMgmtMenu;
+}
+
+
 DSL_VIEWS saveUser() {
   farmer.deleted = false;
   farmer.save();

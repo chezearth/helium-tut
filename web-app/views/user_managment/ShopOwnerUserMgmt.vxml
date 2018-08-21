@@ -5,9 +5,11 @@
 
     <view label="view_heading.shop_owner_user_managment" unit="ShopOwnerUserMgmt" init="init">
 
-        <menuitem label="menu_item.shop_owner_user_managment" icon="UsersProfiles" order="4">
-            <userRole>System Admin</userRole>
-        </menuitem>
+        <!-- <menuitem label="menu_item.shop_owner_user_managment" icon="UsersProfiles" order="4"> -->
+            <!-- <userRole>System Admin</userRole> -->
+        <!-- </menuitem> -->
+
+        <action label="action.back" action="backToUserMgmtMenu"/>
 
         <textfield label="textfield.first_name" datatype="text">
             <binding variable="shopOwner">

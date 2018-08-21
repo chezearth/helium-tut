@@ -6,23 +6,33 @@ SystemAdmin formSystemAdmin;
 
 bool editing;
 
+
 void init() {
   systemAdmins = SystemAdmin:equals(deleted, false);
   formSystemAdmin = SystemAdmin:new();
   editing = false;
 }
 
+
 void editUser() {
   editing = true;
 }
+
 
 DSL_VIEWS viewUser() {
   return DSL_VIEWS.SystemAdminUserDetails;
 }
 
+
 DSL_VIEWS back() {
   return DSL_VIEWS.SystemAdminUserMgmt;
 }
+
+
+DSL_VIEWS backToUserMgmtMenu() {
+  return DSL_VIEWS.UserMgmtMenu;
+}
+
 
 DSL_VIEWS saveUser() {
   formSystemAdmin.save();
@@ -32,6 +42,7 @@ DSL_VIEWS saveUser() {
   init();
   return null;
 }
+
 
 DSL_VIEWS removeUser() {
   if (selectedSystemAdmin == SystemAdmin:user()) {

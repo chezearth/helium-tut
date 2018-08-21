@@ -56,7 +56,7 @@ int countFarmers() {
 
 // Helper function to create menu item
 MenuItem createMenuItem(string label, DSL_VIEWS navigationDestination, int userCount) {
-  MenuItem menuItem:new();
+  MenuItem menuItem = MenuItem:new();
   menuItem.label = label;
   menuItem.description = userCount;
   menuItem.navigationDestination = navigationDestination;
