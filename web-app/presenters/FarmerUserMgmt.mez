@@ -1,12 +1,17 @@
 unit FarmerUserMgmt;
 
 Farmer farmer;
+
 bool editing;
 
+bool showFarmerDetailInTable;
+string tableLable;
 
 void init() {
   farmer = Farmer:new();
   editing = false;
+  showFarmerDetailInTable = false;
+  tableLable = "Fat table";
 }
 
 
@@ -53,4 +58,16 @@ DSL_VIEWS removeUser() {
 
 Farmer[] getFarmers() {
   return Farmer:equals(deleted, false);
+}
+
+string toggleShowFarmerDetailsInTable() {
+  if(showFarmerDetailInTable == false) {
+    showFarmerDetailInTable = true;
+    tableLable = "Slim Table";
+  }
+  else {
+    showFarmerDetailInTable = false;
+    tableLable = "Fat table";
+  }
+  return null;
 }
