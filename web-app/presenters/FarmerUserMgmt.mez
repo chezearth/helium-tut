@@ -1,0 +1,56 @@
+unit FarmerUserMgmt;
+
+Farmer farmer;
+bool editing;
+
+
+void init() {
+  farmer = Farmer:new();
+  editing = false;
+}
+
+
+DSL_VIEWS viewUser() {
+  return DSL_VIEWS.FarmerDetails;
+}
+
+
+DSL_VIEWS back() {
+  return DSL_VIEWS.FarmerUserMgmt;
+}
+
+
+DSL_VIEWS saveUser() {
+  farmer.deleted = false;
+  farmer.save();
+  if (editing == false) {
+    farmer.invite(farmer.mobileNumber);
+  }
+
+  init();
+  return null;
+}
+
+
+DSL_VIEWS editUser() {
+  editing = true;
+  return null;
+}
+
+
+DSL_VIEWS removeUser() {
+  if (farmer == Farmer:user()) {
+    Mez:alertError("alert.currently_logged_in");
+  } else {
+    farmer.deleted = true;
+    farmer.removeRole();
+  }
+
+  init();
+  return null;
+}
+
+
+Farmer[] getFarmers() {
+  return Farmer:equals(deleted, false);
+}

@@ -1,0 +1,41 @@
+@Role("Farmer")
+persistent object Farmer {
+
+  // Farmer Details
+  @requiredFieldValidator("validator.required_field")
+  string firstName;
+
+  @requiredFieldValidator("validator.required_field")
+  string lastName;
+
+  @requiredFieldValidator("validator.required_field")
+  string mobileNumber;
+
+  @requiredFieldValidator("validator.required_field")
+  string emailAddress;
+
+  // Farm details
+  @requiredFieldValidator("validator.required_field")
+  string farmAddress;
+
+  @requiredFieldValidator("validator.required_field")
+  decimal farmSize;
+
+  @requiredFieldValidator("validator.required_field")
+  decimal longitude;
+
+  @requiredFieldValidator("validator.required_field")
+  decimal latitude;
+
+  @requiredFieldValidator("validator.required_field")
+  STATES state;
+
+  // When last did this farmer visit any shop
+  datetime lastShopVisit;
+
+  // Meta information
+  datetime registeredOn;
+  datetime updatedOn;
+  bool deleted;
+
+}

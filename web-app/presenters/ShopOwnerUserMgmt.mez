@@ -20,11 +20,6 @@ DSL_VIEWS back() {
 }
 
 
-ShopOwner[] getShopOwners() {
-  return ShopOwner:equals(deleted, false);
-}
-
-
 DSL_VIEWS saveUser() {
   shopOwner.deleted = false;
   shopOwner.save();
@@ -53,6 +48,11 @@ DSL_VIEWS removeUser() {
 
   init();
   return null;
+}
+
+
+ShopOwner[] getShopOwners() {
+  return ShopOwner:equals(deleted, false);
 }
 
 
