@@ -10,7 +10,7 @@
         <info label="info.first_name">
             <binding variable="farmer">
                 <attribute name="firstName"/>
-            </binding>
+              </binding>
         </info>
 
         <info label="info.last_name">

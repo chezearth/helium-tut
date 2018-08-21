@@ -1,0 +1,43 @@
+unit UserMgmtMenu;
+
+// Variable to mind on from 'select' row action
+MenuItem menuItem;
+
+// Menu table collection source
+MenuItem[] menuItems;
+
+// Create the menu items for our menu
+void initMenu() {
+  menuItems.clear();
+
+  // Menu item for System Admin user managment
+  MenuItem systemAdminMenuItem = createMenuItem(
+    String:translate("menu_item.system_admin_user_management"),
+    DSL_VIEWS.SystemAdminUserMgmt,
+    countSystemAdmins()
+  );
+  menuItems.append(systemAdminMenuItem);
+
+  // Menu item for Shop Owner user managment
+  MenuItem shopOwnerMenuItem = createMenuItem(
+    String:translate("menu_item.shop_owner_user_managment"),
+    DSL_VIEWS.ShopOwnerUserMgmt,
+    countShopOwners()
+  );
+  menuItems.append(shopOwnerMenuItem);
+
+  // Menu item for Farmer user managment
+  MenuItem farmerMenuItem = createMenuItem(
+    String:translate("menu_item.farmer_user_management"),
+    DSL_VIEWS.FarmerUserMgmt,
+    countFarmers()
+  );
+  menuItems.append(farmerMenuItem);
+
+}
+
+
+// Navigate to the view associated with the select menu item
+DSL_VIEWS selectMenuItem() {
+  return menuItem.navigationDestination;
+}
