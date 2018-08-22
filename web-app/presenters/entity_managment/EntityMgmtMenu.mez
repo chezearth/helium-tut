@@ -19,12 +19,12 @@ void initMenu() {
   menuItems.append(shopMenuItem);
 
   // Menu item for Stock entity managment
-  // MenuItem shopOwnerMenuItem = createMenuItem(
-    // String:translate("menu_item.shop_owner_user_managment"),
-    // DSL_VIEWS.ShopOwnerUserMgmt,
-    // countShopOwners()
-  // );
-  // menuItems.append(shopOwnerMenuItem);
+  MenuItem stockMenuItem = createMenuItem(
+    String:translate("menu_item.stock_entity_managment"),
+    DSL_VIEWS.StockMgmt,
+    countStockItems()
+  );
+  menuItems.append(stockMenuItem);
 
 }
 
@@ -35,10 +35,10 @@ int countShops() {
   return shops.length();
 }
 
-// int countStocks() {
-  // Stock[] stocks = Stock:equals(deleted, false);
-  // return stocks.length();
-// }
+int countStockItems() {
+  Stock[] stocks = Stock:equals(deleted, false);
+  return stocks.length();
+}
 
 
 // Helper function to create menu item

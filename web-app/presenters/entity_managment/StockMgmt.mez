@@ -1,13 +1,75 @@
-unit ShopMgmt;
+unit StockMgmt;
 
-Shop shop;
+Stock stock;
 
 bool editing;
 
 
 void init() {
-  shop = Shop:new();
-  ownerToAdd = null;
-  shop.shopCode = generateShopCode();
+  stock = Stock:new();
+  stock.deleted = false;
+  // stock.stockCode = generateStockCode();
   editing = false;
+}
+
+
+// Collection source for data table
+Stock[] getStockItems() {
+  return Stock:equals(deleted, false);
+}
+
+
+DSL_VIEWS saveStock() {
+
+//  if (shop.owner == null) {
+//    Mez:alertError("alert.shop_owner_required");
+//    return null;
+//  }
+
+  // if (editing == true) {
+    // When editing we record the current time
+    // shop.updatedOn = Mez:now();
+  // }
+  // else {
+    // When saving for the first time we record the current time
+    // shop.createdOn = Mez:now();
+    // stock.deleted = false;
+  stock.save();
+  // }
+
+  // re-initialise
+  init();
+
+  // Stay on the same view
+  return null;
+
+}
+
+
+// Callback for edit row action
+DSL_VIEWS editStock() {
+  editing = true;
+  return null;
+}
+
+
+// Callback for delete row action
+DSL_VIEWS deleteStock() {
+  stock.deleted = true;
+  init();
+  return null;
+}
+//
+//
+// // helper to generate random and unique codes for shops
+// string generateStockCode() {
+//   string stockId = stock._id;
+//   string[] idParts = String:split(stockId, "-");
+//   int randomNumber = Math:random() * 100000;
+//   return String:concat(idParts.get(0), "-", randomNumber);
+// }
+
+
+DSL_VIEWS backToEntityMgmtMenu() {
+  return DSL_VIEWS.EntityMgmtMenu;
 }

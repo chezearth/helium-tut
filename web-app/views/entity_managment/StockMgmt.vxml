@@ -7,97 +7,50 @@
 
       <action label="action.back" action="backToEntityMgmtMenu"/>
 
-      <info label="info.shop_code">
-          <binding variable="shop">
-              <attribute name="shopCode"/>
-          </binding>
-      </info>
+      <!-- <info label="info.stock_code"> -->
+          <!-- <binding variable="stock"> -->
+              <!-- <attribute name="stockCode"/> -->
+          <!-- </binding> -->
+      <!-- </info> -->
 
       <textfield label="textfield.name">
-          <binding variable="shop">
+          <binding variable="stock">
               <attribute name="name"/>
           </binding>
       </textfield>
 
-      <textfield label="textfield.description">
-          <binding variable="shop">
-              <attribute name="description"/>
+      <select label="select.stockType">
+          <binding variable="stock">
+              <attribute name="stockType"/>
           </binding>
-      </textfield>
-
-      <textfield label="textfield.longitude">
-          <binding variable="shop">
-              <attribute name="longitude"/>
-          </binding>
-      </textfield>
-
-      <textfield label="textfield.latitude">
-          <binding variable="shop">
-              <attribute name="latitude"/>
-          </binding>
-      </textfield>
-
-      <select label="select.state">
-          <binding variable="shop">
-              <attribute name="state"/>
-          </binding>
-          <enum>STATES</enum>
+          <enum>STOCK_TYPE</enum>
       </select>
 
-      <!-- select box and button to add shop owners for shop -->
-      <select label="select.shop_owner">
-          <binding variable="ownerToAdd"/>
-          <collectionSource function="getAllShopOwners">
-              <displayAttribute name="firstName"/>
-              <displayAttribute name="lastName"/>
-          </collectionSource>
-      </select>
+      <submit label="submit.save" action="saveStock"/>
 
-      <submit label="submit.add_shop_owner" action="addShopOwner"/>
+      <!-- stocks already in system -->
+      <table title="table_title.stock_items">
+          <collectionSource function="getStockItems"/>
 
-      <!-- table of added shop owners for shop -->
-      <table title="table_title.shop_owners">
-          <collectionSource function="getCurrentShopOwners"/>
-          <column heading="column_heading.name">
-              <attributeName>firstName</attributeName>
-              <attributeName>lastName</attributeName>
-          </column>
-          <rowAction label="button.remove" action="removeShopOwner">
-              <binding variable="ownerToRemove"/>
-          </rowAction>
-      </table>
-
-      <submit label="submit.save" action="saveShop"/>
-
-      <!-- shops already in system -->
-      <table title="table_title.shops">
-          <collectionSource function="getShops"/>
-
-          <column heading="column_heading.created_on">
-              <attributeName>createdOn</attributeName>
-          </column>
-          <column heading="column_heading.shop_code">
-              <attributeName>shopCode</attributeName>
-          </column>
+          <!-- <column heading="column_heading.stock_code"> -->
+              <!-- <attributeName>stockCode</attributeName> -->
+          <!-- </column> -->
           <column heading="column_heading.name">
               <attributeName>name</attributeName>
           </column>
-          <column heading="column_heading.description">
-              <attributeName>description</attributeName>
-          </column>
-          <column heading="column_heading.state">
-              <attributeName>state</attributeName>
+          <column heading="column_heading.stockType">
+              <attributeName>stockType</attributeName>
           </column>
 
-          <rowAction label="button.view" action="viewShop">
-              <binding variable="shop" />
+          <!-- <rowAction label="button.view" action="viewShop"> -->
+              <!-- <binding variable="shop" /> -->
+          <!-- </rowAction> -->
+          <rowAction label="button.edit" action="editStock">
+              <binding variable="stock" />
           </rowAction>
-          <rowAction label="button.edit" action="editShop">
-              <binding variable="shop" />
-          </rowAction>
-          <rowAction label="button.remove" action="deleteShop">
-              <binding variable="shop" />
-              <confirm subject="confirm_subject.removing_shop" body="confirm_body.removing_shop" />
+          <rowAction label="button.remove" action="deleteStock">
+              <binding variable="stock" />
+              <confirm subject="confirm_subject.removing_stock" body="confirm_body.removing_stock" />
           </rowAction>
 
       </table>
