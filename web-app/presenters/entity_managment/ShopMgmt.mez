@@ -96,6 +96,11 @@ DSL_VIEWS back() {
 }
 
 
+DSL_VIEWS backToEntityMgmtMenu() {
+  return DSL_VIEWS.EntityMgmtMenu;
+}
+
+
 DSL_VIEWS editShop() {
   editing = true;
   return null;

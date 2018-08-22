@@ -5,9 +5,11 @@
 
     <view label="view_heading.shop_management" unit="ShopMgmt" init="init">
 
-        <menuitem label="menu_item.shop_management" icon="Shop" order="2">
-            <userRole>System Admin</userRole>
-        </menuitem>
+        <!-- <menuitem label="menu_item.shop_management" icon="Shop" order="2"> -->
+            <!-- <userRole>System Admin</userRole> -->
+        <!-- </menuitem> -->
+
+        <action label="action.back" action="backToEntityMgmtMenu"/>
 
         <info label="info.shop_code">
             <binding variable="shop">
@@ -94,7 +96,7 @@
                 <attributeName>owner.firstName</attributeName>
                 <attributeName>owner.lastName</attributeName>
             </column> -->
-            
+
             <rowAction label="button.view" action="viewShop">
                 <binding variable="shop" />
             </rowAction>

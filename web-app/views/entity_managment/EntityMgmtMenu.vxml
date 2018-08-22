@@ -3,9 +3,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../View.xsd">
 
-    <view label="view_heading.user_management" unit="UserMgmtMenu" init="initMenu">
+    <view label="view_heading.entity_management" unit="EntityMgmtMenu" init="initMenu">
 
-        <menuitem label="menu_item.user_management" icon="UsersProfiles" order="1">
+        <menuitem label="menu_item.entity_management" icon="Shop" order="2">
             <userRole>System Admin</userRole>
         </menuitem>
 
@@ -13,11 +13,11 @@
 
             <collectionSource variable="menuItems"/>
 
-            <column heading="column_heading.user_type">
+            <column heading="column_heading.entity_type">
                 <attributeName>label</attributeName>
             </column>
 
-            <column heading="column_heading.user_count">
+            <column heading="column_heading.entity_count">
                 <attributeName>description</attributeName>
             </column>
 

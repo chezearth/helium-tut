@@ -10,7 +10,7 @@ MenuItem[] menuItems;
 void initMenu() {
   menuItems.clear();
 
-  // Menu item for System Admin user managment
+  // Menu item for System Admin user management
   MenuItem systemAdminMenuItem = createMenuItem(
     String:translate("menu_item.system_admin_user_management"),
     DSL_VIEWS.SystemAdminUserMgmt,
@@ -18,15 +18,15 @@ void initMenu() {
   );
   menuItems.append(systemAdminMenuItem);
 
-  // Menu item for Shop Owner user managment
+  // Menu item for Shop Owner user management
   MenuItem shopOwnerMenuItem = createMenuItem(
-    String:translate("menu_item.shop_owner_user_managment"),
+    String:translate("menu_item.shop_owner_user_management"),
     DSL_VIEWS.ShopOwnerUserMgmt,
     countShopOwners()
   );
   menuItems.append(shopOwnerMenuItem);
 
-  // Menu item for Farmer user managment
+  // Menu item for Farmer user management
   MenuItem farmerMenuItem = createMenuItem(
     String:translate("menu_item.farmer_user_management"),
     DSL_VIEWS.FarmerUserMgmt,

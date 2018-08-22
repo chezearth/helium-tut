@@ -3,9 +3,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://uiprogram.mezzanine.com/View View.xsd">
 
-    <view label="view_heading.shop_owner_user_managment" unit="ShopOwnerUserMgmt" init="init">
+    <view label="view_heading.shop_owner_user_management" unit="ShopOwnerUserMgmt" init="init">
 
-        <!-- <menuitem label="menu_item.shop_owner_user_managment" icon="UsersProfiles" order="4"> -->
+        <!-- <menuitem label="menu_item.shop_owner_user_management" icon="UsersProfiles" order="4"> -->
             <!-- <userRole>System Admin</userRole> -->
         <!-- </menuitem> -->
 

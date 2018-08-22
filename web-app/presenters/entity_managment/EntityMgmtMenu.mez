@@ -1,0 +1,59 @@
+unit EntityMgmtMenu;
+
+// Variable to mind on from 'select' row action
+MenuItem menuItem;
+
+// Menu table collection source
+MenuItem[] menuItems;
+
+// Create the menu items for our menu
+void initMenu() {
+  menuItems.clear();
+
+  // Menu item for Shop entity managment
+  MenuItem shopMenuItem = createMenuItem(
+    String:translate("menu_item.shop_entity_management"),
+    DSL_VIEWS.ShopMgmt,
+    countShops()
+  );
+  menuItems.append(shopMenuItem);
+
+  // Menu item for Stock entity managment
+  // MenuItem shopOwnerMenuItem = createMenuItem(
+    // String:translate("menu_item.shop_owner_user_managment"),
+    // DSL_VIEWS.ShopOwnerUserMgmt,
+    // countShopOwners()
+  // );
+  // menuItems.append(shopOwnerMenuItem);
+
+}
+
+
+// Helper functions to count users in the system
+int countShops() {
+  Shop[] shops = Shop:equals(deleted, false);
+  return shops.length();
+}
+
+// int countStocks() {
+  // Stock[] stocks = Stock:equals(deleted, false);
+  // return stocks.length();
+// }
+
+
+// Helper function to create menu item
+MenuItem createMenuItem(string label, DSL_VIEWS navigationDestination, int entityCount) {
+  MenuItem menuItem = MenuItem:new();
+  menuItem.label = label;
+  menuItem.description = entityCount;
+  menuItem.navigationDestination = navigationDestination;
+  return menuItem;
+}
+
+
+
+
+// Navigate to the view associated with the select menu item
+DSL_VIEWS selectMenuItem() {
+  return menuItem.navigationDestination;
+}
