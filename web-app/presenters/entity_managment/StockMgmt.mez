@@ -1,0 +1,13 @@
+unit ShopMgmt;
+
+Shop shop;
+
+bool editing;
+
+
+void init() {
+  shop = Shop:new();
+  ownerToAdd = null;
+  shop.shopCode = generateShopCode();
+  editing = false;
+}

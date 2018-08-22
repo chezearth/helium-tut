@@ -2,11 +2,21 @@ unit UserInvite;
 
 @InviteUser
 SystemAdmin inviteSystemAdmin() {
+
+  // Use the `new()` keyword to initialise a new SystemAdmin object and assign it to a variable
   SystemAdmin systemAdmin = SystemAdmin:new();
+
+  // Hard-coded values representing a user that will be used during development
   systemAdmin.firstName = "Test";
   systemAdmin.lastName = "User";
   systemAdmin.mobileNumber = "278212345678";
   systemAdmin.emailAddress = "user@domain.com";
   systemAdmin.deleted = false;
+
+  // Generate test data for crops
+  TestData:generateStockItems();
+
+  // Return the new System Admin
   return systemAdmin;
+
 }
