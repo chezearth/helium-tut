@@ -1,0 +1,14 @@
+persistent object StockUpdate {
+
+  string stockName;
+
+  int level;
+  decimal price;
+  date stocktakeDate;
+
+  @ManyToOne
+  Shop shop via stockUpdates;
+
+  @ManyToOne
+  Stock stock via stockUpdate;
+}

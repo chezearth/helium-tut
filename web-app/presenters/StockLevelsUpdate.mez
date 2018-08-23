@@ -1,0 +1,43 @@
+unit StockLevelsUpdate;
+
+Shop selectedShop;
+Shop[] availableShops;
+date selectedDateOfStocktake;
+FileUpload fileUpload;
+
+// Initialise unit variables
+void init() {
+
+  fileUpload = FileUpload:new();
+
+  availableShops = Shop:relationshipIn(owners, ShopOwner:user());
+
+  if(availableShops.length() > 0) {
+    selectedShop = availableShops.get(0);
+  }
+  selectedDateOfStocktake = Mez:now();
+}
+
+
+void saveStockUpdate() {
+  StockUpdate[] stockUpdates = StockUpdate:fromCsv(fileUpload.data);
+  for (int i = 0; i < stockUpdates.length(); i++) {
+    StockUpdate stockUpdate = stockUpdates.get(i);
+    stockUpdate.stocktakeDate = selectedDateOfStocktake;
+    stockUpdate.shop = selectedShop;
+    stockUpdate.stock = getStockFromName(stockUpdate.stockName);
+    stockUpdate.save();
+  }
+  Mez:alert("alert.uploaded_data_saved");
+  fileUpload = FileUpload:new();
+}
+
+
+Stock getStockFromName(string name) {
+  Stock[] stocks = Stock:equals(name, name);
+  if(stocks.length() > 0) {
+    Stock stock = stocks.get(0);
+    return stock;
+  }
+  return null;
+}
