@@ -2,12 +2,17 @@ unit TestData;
 
 
 void generateStockItems() {
+  string s = stockExists();
+  // string stockExistsString = String:concat("Stock exists: ", s);
+  Mez:log(s);
   if (stockExists() == false) {
     string[] stockNames = getStockNames();
+    // Mez:alert(String:join(stockNames, " "));
     for (int i = 0; i < stockNames.length(); i++) {
       Stock stock = Stock:new();
       stock.name = stockNames.get(i);
       stock.stockType = getStockType(stockNames.get(i));
+      stock.deleted = false;
       stock.save();
     }
   }
