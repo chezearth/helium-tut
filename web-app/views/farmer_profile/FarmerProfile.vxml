@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui xmlns="http://uiprogram.mezzanine.com/View"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../View.xsd">
+
+    <view label="view_heading.farmer_profile" unit="FarmerProfile" init="init">
+
+        <menuitem label="menu_item.farmer_profile" order="0" icon="UserProfile">
+            <userRole>Farmer</userRole>
+        </menuitem>
+
+        <info label="info.registered_on">
+          <binding variable="farmer">
+            <attribute name="registeredOn"/>
+          </binding>
+        </info>
+
+        <info label="info.updated_on">
+          <binding variable="farmer">
+            <attribute name="updatedOn"/>
+          </binding>
+        </info>
+
+        <info label="info.first_name">
+          <binding variable="farmer">
+            <attribute name="firstName"/>
+          </binding>
+        </info>
+
+        <info label="info.last_name">
+          <binding variable="farmer">
+            <attribute name="lastName"/>
+          </binding>
+        </info>
+
+        <info label="info.mobile_number">
+          <binding variable="farmer">
+            <attribute name="mobileNumber"/>
+          </binding>
+        </info>
+
+        <info label="info.email_address">
+          <binding variable="farmer">
+            <attribute name="emailAddress"/>
+          </binding>
+        </info>
+
+        <info label="info.farm_address">
+          <binding variable="farmer">
+            <attribute name="farmAddress"/>
+          </binding>
+        </info>
+
+        <info label="info.farm_size">
+          <binding variable="farmer">
+            <attribute name="farmSize"/>
+          </binding>
+        </info>
+
+        <info label="info.longitude">
+          <binding variable="farmer">
+            <attribute name="longitude"/>
+          </binding>
+        </info>
+
+        <info label="info.latitude">
+          <binding variable="farmer">
+            <attribute name="latitude"/>
+          </binding>
+        </info>
+
+        <info label="info.state">
+          <binding variable="farmer">
+            <attribute name="state"/>
+          </binding>
+        </info>
+
+        <!-- Select box for eligible crop types to link to farmer -->
+        <select label="select.crop_types">
+            <visible variable="showFarmerCropTypes" />
+            <binding variable="cropType"/>
+            <collectionSource function="getEligibleCropTypes">
+                <displayAttribute name="name"/>
+            </collectionSource>
+        </select>
+
+        <!-- Submit button to add selected crop type/stock to farmer -->
+        <submit label="submit.add_crop_type" action="addCropType">
+            <visible variable="showFarmerCropTypes"/>
+        </submit>
+
+        <!-- Button to remove all crop types that are linked to farmer -->
+        <submit label="button.remove_all_farmer_crop_types" action="removeAllFarmerCropTypes">
+            <visible variable="showFarmerCropTypes"/>
+        </submit>
+
+        <!-- Table to represent the farmer crop  types -->
+        <table title="table_title.farmer_crop_types">
+            <visible variable="showFarmerCropTypes"/>
+            <collectionSource function="getFarmerCropTypes"/>
+
+            <column heading="column_heading.name">
+                <attributeName>name</attributeName>
+            </column>
+
+            <rowAction label="button.remove" action="removeFarmerCropType">
+                <binding variable="cropType"/>
+            </rowAction>
+            
+        </table>
+
+    </view>
+
+</ui>

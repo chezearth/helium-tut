@@ -5,10 +5,6 @@
 
     <view label="view_heading.farmer_user_management" unit="FarmerUserMgmt" init="init">
 
-        <!-- <menuitem label="menu_item.farmer_user_management" icon="UsersProfiles" order="5"> -->
-            <!-- <userRole>System Admin</userRole> -->
-        <!-- </menuitem> -->
-
         <action label="action.back" action="backToUserMgmtMenu"/>
 
         <textfield label="textfield.first_name">
@@ -74,7 +70,7 @@
 
         <submit label="submit.save" action="saveUser"/>
 
-        <table title="table_title.farmers" defaultSortColumn="0" defaultSortDirection="ascending" csvExport="disabled">
+        <table title="table_title.farmers">
             <collectionSource function="getFarmers"/>
 
             <column heading="column_heading.registered_on">
@@ -111,9 +107,6 @@
             <column heading="column_heading.state">
                 <attributeName>state</attributeName>
                 <visible variable="showFarmerDetailInTable"/>
-            </column>
-            <column heading="column_heading.last_shop_visit">
-                <attributeName>lastShopVisit</attributeName>
             </column>
 
             <rowAction label="button.view" action="viewUser">

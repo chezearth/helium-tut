@@ -38,4 +38,8 @@ persistent object Farmer {
   datetime updatedOn;
   bool deleted;
 
+  // Relationship with crop types
+  @ManyToMany
+  Stock cropTypes via farmers;
+
 }

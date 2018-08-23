@@ -8,7 +8,6 @@ bool editing;
 void init() {
   stock = Stock:new();
   stock.deleted = false;
-  // stock.stockCode = generateStockCode();
   editing = false;
 }
 
@@ -21,23 +20,9 @@ Stock[] getStockItems() {
 
 DSL_VIEWS saveStock() {
 
-//  if (shop.owner == null) {
-//    Mez:alertError("alert.shop_owner_required");
-//    return null;
-//  }
-
-  // if (editing == true) {
-    // When editing we record the current time
-    // shop.updatedOn = Mez:now();
-  // }
-  // else {
-    // When saving for the first time we record the current time
-    // shop.createdOn = Mez:now();
-    // stock.deleted = false;
   stock.save();
-  // }
 
-  // re-initialise
+  // re-initialise the state of all unit variables
   init();
 
   // Stay on the same view
@@ -59,15 +44,6 @@ DSL_VIEWS deleteStock() {
   init();
   return null;
 }
-//
-//
-// // helper to generate random and unique codes for shops
-// string generateStockCode() {
-//   string stockId = stock._id;
-//   string[] idParts = String:split(stockId, "-");
-//   int randomNumber = Math:random() * 100000;
-//   return String:concat(idParts.get(0), "-", randomNumber);
-// }
 
 
 DSL_VIEWS backToEntityMgmtMenu() {

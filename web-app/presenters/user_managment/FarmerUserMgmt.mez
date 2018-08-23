@@ -1,11 +1,13 @@
 unit FarmerUserMgmt;
 
 Farmer farmer;
+Stock cropType;
 
 bool editing;
 
 bool showFarmerDetailInTable;
 string tableLable;
+
 
 void init() {
   farmer = Farmer:new();
@@ -16,7 +18,7 @@ void init() {
 
 
 DSL_VIEWS viewUser() {
-  return DSL_VIEWS.FarmerDetails;
+  return DSL_VIEWS.FarmerUserDetails;
 }
 
 
@@ -34,7 +36,11 @@ DSL_VIEWS saveUser() {
   farmer.deleted = false;
   farmer.save();
   if (editing == false) {
+    farmer.registeredOn = Mez:now();
     farmer.invite(farmer.mobileNumber);
+  }
+  else {
+    farmer.updatedOn = Mez:now();
   }
 
   init();
@@ -65,7 +71,10 @@ Farmer[] getFarmers() {
   return Farmer:equals(deleted, false);
 }
 
+
+// View or hide farmer table details
 string toggleShowFarmerDetailsInTable() {
+
   if(showFarmerDetailInTable == false) {
     showFarmerDetailInTable = true;
     tableLable = "Slim Table";
@@ -75,4 +84,9 @@ string toggleShowFarmerDetailsInTable() {
     tableLable = "Fat table";
   }
   return null;
+}
+
+
+Stock[] getFarmerCropTypes() {
+  return farmer.cropTypes;
 }

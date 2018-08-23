@@ -7,19 +7,13 @@
 
       <action label="action.back" action="backToEntityMgmtMenu"/>
 
-      <!-- <info label="info.stock_code"> -->
-          <!-- <binding variable="stock"> -->
-              <!-- <attribute name="stockCode"/> -->
-          <!-- </binding> -->
-      <!-- </info> -->
-
       <textfield label="textfield.name">
           <binding variable="stock">
               <attribute name="name"/>
           </binding>
       </textfield>
 
-      <select label="select.stockType">
+      <select label="select.stock_type">
           <binding variable="stock">
               <attribute name="stockType"/>
           </binding>
@@ -32,19 +26,13 @@
       <table title="table_title.stock_items">
           <collectionSource function="getStockItems"/>
 
-          <!-- <column heading="column_heading.stock_code"> -->
-              <!-- <attributeName>stockCode</attributeName> -->
-          <!-- </column> -->
           <column heading="column_heading.name">
               <attributeName>name</attributeName>
           </column>
-          <column heading="column_heading.stockType">
+          <column heading="column_heading.stock_type">
               <attributeName>stockType</attributeName>
           </column>
 
-          <!-- <rowAction label="button.view" action="viewShop"> -->
-              <!-- <binding variable="shop" /> -->
-          <!-- </rowAction> -->
           <rowAction label="button.edit" action="editStock">
               <binding variable="stock" />
           </rowAction>
