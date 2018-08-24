@@ -40,6 +40,10 @@
             <visible function="messagingOptedIn"/>
         </submit>
 
+        <submit label="button.remove_all_messaging_shops" action="removeAllMessagingShops">
+            <visible function="messagingOptedIn"/>
+        </submit>
+    	
     </view>
 
 </ui>

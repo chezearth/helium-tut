@@ -117,3 +117,14 @@ string addMessagingShop() {
   farmer.messagingProfileUpdatedOn = Mez:now();
   return null;
 }
+
+
+string removeAllMessagingShops() {
+  Shop[] farmerMessagingShops = farmer.messagingShops;
+  // Loop backwards to avoid skipping over items as list is reduced
+  for(int i = farmerMessagingShops.length() - 1; i >= 0; i--) {
+    farmerMessagingShops.remove(i);
+    farmer.messagingProfileUpdatedOn = Mez:now();
+  }
+  return null;
+}

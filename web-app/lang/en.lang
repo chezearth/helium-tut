@@ -6,6 +6,7 @@ button.edit = Edit
 button.fat_table_slim_table = {FarmerUserMgmt:tableLable}
 button.remove = Remove
 button.remove_all_farmer_crop_types = Remove all crops
+button.remove_all_messaging_shops = Remove all messaging shops
 button.select = Select
 button.view = View
 checkbox.opt_in_email = Opt in for messaging by email:
