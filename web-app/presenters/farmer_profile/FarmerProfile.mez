@@ -112,10 +112,31 @@ Shop[] getEligibleShopsForMessaging() {
 }
 
 
+Shop[] getFarmerShopsForMessaging() {
+  return farmer.messagingShops;
+}
+
+
 string addMessagingShop() {
   farmer.messagingShops.append(messagingShop);
   farmer.messagingProfileUpdatedOn = Mez:now();
   return null;
+}
+
+
+string removeMessagingShop() {
+    Shop[] farmerMessagingShops = farmer.messagingShops;
+    // Loop with a counter over the farmer messaging shops collection
+    for(int i = 0; i < farmerMessagingShops.length(); i++) {
+      Shop currentMessagingShop = farmerMessagingShops.get(i);
+      // Compare item using internal ids to ensure equivalence
+      if(currentMessagingShop._id == messagingShop._id) {
+        farmerMessagingShops.remove(i);
+        farmer.messagingProfileUpdatedOn = Mez:now();
+      }
+    }
+    messagingShop = null;
+    return null;
 }
 
 

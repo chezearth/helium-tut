@@ -43,7 +43,30 @@
         <submit label="button.remove_all_messaging_shops" action="removeAllMessagingShops">
             <visible function="messagingOptedIn"/>
         </submit>
-    	
+
+        <table title="table_title.shops">
+            <visible function="messagingOptedIn"/>
+            <collectionSource function="getFarmerShopsForMessaging"/>
+
+            <column heading="column_heading.shop_code">
+                <attributeName>shopCode</attributeName>
+            </column>
+            <column heading="column_heading.name">
+                <attributeName>name</attributeName>
+            </column>
+            <column heading="column_heading.description">
+                <attributeName>description</attributeName>
+            </column>
+            <column heading="column_heading.state">
+                <attributeName>state</attributeName>
+            </column>
+
+            <rowAction label="button.remove" action="removeMessagingShop">
+                <binding variable="messagingShop"/>
+            </rowAction>
+
+        </table>
+
     </view>
 
 </ui>
