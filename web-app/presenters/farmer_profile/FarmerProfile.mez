@@ -1,36 +1,22 @@
 unit FarmerProfile;
 
 Farmer farmer;
-
-bool showFarmerCropTypes;
-
-string cropTypeTableLable;
 Stock cropType;
+
+// bool showFarmerCropTypes;
+
+// string cropTypeTableLable;
 
 
 void init() {
   farmer = Farmer:user();
-  showFarmerCropTypes = true;
-  cropTypeTableLable = "Hide crop types";
+  // showFarmerCropTypes = true;
+  // cropTypeTableLable = "Hide crop types";
 }
 
 
 Stock[] getFarmerCropTypes() {
   return farmer.cropTypes;
-}
-
-
-// View or hide farmer crop type details
-string toggleFarmerCropTypesVisibility() {
-  if(showFarmerCropTypes == false) {
-    showFarmerCropTypes = true;
-    cropTypeTableLable = "Hide crop types";
-  }
-  else {
-    showFarmerCropTypes = false;
-    cropTypeTableLable = "Show crop types";
-  }
-  return null;
 }
 
 
@@ -50,6 +36,7 @@ Stock[] getEligibleCropTypes() {
 // Link the selected crop types to the farmer
 string addCropType() {
   farmer.cropTypes.append(cropType);
+  farmer.cropTypeProfileUpdatedOn = Mez:now();
   return null;
 }
 
@@ -63,6 +50,7 @@ string removeFarmerCropType() {
     // Compare item using internal ids to ensure equiv
     if(currentFarmerCropType._id == cropType._id) {
       farmerCropTypes.remove(i);
+      farmer.cropTypeProfileUpdatedOn = Mez:now();
     }
   }
   cropType = null;
@@ -76,6 +64,32 @@ string removeAllFarmerCropTypes() {
   // loop reverse to avoid skipping over items as list is reduced
   for(int i = farmerCropTypes.length() - 1; i >= 0; i--) {
     farmerCropTypes.remove(i);
+    farmer.cropTypeProfileUpdatedOn = Mez:now();
   }
   return null;
 }
+
+
+DSL_VIEWS backToMenu() {
+  return DSL_VIEWS.FarmerProfileMenu;
+}
+
+
+DSL_VIEWS submitMessagingPreferences() {
+  farmer.messagingProfileUpdatedOn = Mez:now();
+  return DSL_VIEWS.FarmerProfileMessaging;
+}
+
+
+// View or hide farmer crop type details
+// string toggleFarmerCropTypesVisibility() {
+  // if(showFarmerCropTypes == false) {
+    // showFarmerCropTypes = true;
+    // cropTypeTableLable = "Hide crop types";
+  // }
+  // else {
+    // showFarmerCropTypes = false;
+    // cropTypeTableLable = "Show crop types";
+  // }
+  // return null;
+// }
