@@ -28,6 +28,13 @@ void initMenu() {
   );
   menuItems.append(cropTypeProfileMenuItem);
 
+  MenuItem profileMessagingMenuItem = createMenuItem(
+  String:translate("menu_item.farmer_profile_messaging"),
+  DSL_VIEWS.FarmerProfileMessaging,
+  Strings:concat(currentFarmerUser.messagingProfileUpdatedOn, "")
+  );
+  menuItems.append(profileMessagingMenuItem);
+
 }
 
 

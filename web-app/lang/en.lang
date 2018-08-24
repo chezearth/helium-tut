@@ -70,6 +70,7 @@ info.welcome = Welcome:
 menu_item.farmer_profile = Farmer Profile
 menu_item.farmer_profile_crop_type = Farmer Profile - Crop Type
 menu_item.farmer_profile_general = Farmer Profile - General
+menu_item.farmer_profile_messaging = Farmer Profile - Messaging
 menu_item.farmer_user_management = Farmers
 menu_item.entity_management = Entities
 menu_item.shop_entity_management = Shops
