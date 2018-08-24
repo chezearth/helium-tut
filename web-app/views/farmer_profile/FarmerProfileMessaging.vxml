@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui xmlns="http://uiprogram.mezzanine.com/View"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uiprogram.mezzanine.com/View View.xsd">
+
+    <view label="view_heading.farmer_profile_messaging" unit="FarmerProfile" init="init">
+
+        <action label="action.back" action="backToMenu"/>
+
+        <info label="info.last_updated">
+            <binding variable="farmer">
+                <attribute name="messagingProfileUpdatedOn"/>
+            </binding>
+        </info>
+
+        <checkbox label="checkbox.opt_in_messaging">
+            <binding variable="farmer">
+                <attribute name="smsMessaging"/>
+            </binding>
+        </checkbox>
+
+        <checkbox label="checkbox.opt_in_email">
+            <binding variable="farmer">
+                <attribute name="emailMessaging"/>
+            </binding>
+        </checkbox>
+
+        <submit label="submit.submit_messaging_preferences" action="submitMessagingPreferences"/>
+
+    </view>
+
+</ui>
