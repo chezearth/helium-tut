@@ -26,7 +26,15 @@
         </checkbox>
 
         <submit label="submit.submit_messaging_preferences" action="submitMessagingPreferences"/>
-        
+
+        <select label="select.shop">
+            <visible function="messagingOptedIn"/>
+            <binding variable="messagingShop"/>
+            <collectionSource function="getEligibleShopsForMessaging">
+                <displayAttribute name="name"/>
+                <displayAttribute name="shopCode"/>
+            </collectionSource>
+        </select>
 
     </view>
 

@@ -2,6 +2,7 @@ unit FarmerProfile;
 
 Farmer farmer;
 Stock cropType;
+Shop messagingShop;
 
 // bool showFarmerCropTypes;
 
@@ -93,3 +94,18 @@ DSL_VIEWS submitMessagingPreferences() {
   // }
   // return null;
 // }
+
+
+bool messagingOptedIn() {
+  if(farmer.smsMessaging || farmer.emailMessaging) {
+    return true;
+  }
+  return false;
+}
+
+Shop[] getEligibleShopsForMessaging() {
+  return Shop:diff(
+    equals(deleted, false),
+    relationshipIn(notifiedFarmers, farmer)
+  );
+}
