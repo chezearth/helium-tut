@@ -88,6 +88,7 @@ select.shop_owner = Shop owner:
 select.stock_type = Stock type:
 submit.add_crop_type = Add crop
 submit.add_shop_owner = Add shop owner
+submit.add_messaging_shop = Add messaging shop
 submit.save = Save
 submit.submit_messaging_preferences = Submit messaging preferences
 table_title.farmer_crop_types = Crop Types

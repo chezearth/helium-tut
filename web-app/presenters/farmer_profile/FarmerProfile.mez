@@ -103,9 +103,17 @@ bool messagingOptedIn() {
   return false;
 }
 
+
 Shop[] getEligibleShopsForMessaging() {
   return Shop:diff(
     equals(deleted, false),
     relationshipIn(notifiedFarmers, farmer)
   );
+}
+
+
+string addMessagingShop() {
+  farmer.messagingShops.append(messagingShop);
+  farmer.messagingProfileUpdatedOn = Mez:now();
+  return null;
 }

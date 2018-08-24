@@ -36,6 +36,10 @@
             </collectionSource>
         </select>
 
+        <submit label="submit.add_messaging_shop" action="addMessagingShop">
+            <visible function="messagingOptedIn"/>
+        </submit>
+
     </view>
 
 </ui>
