@@ -18,6 +18,10 @@
             </binding>
         </fileupload>
 
+        <filebrowser dataAttribute="governmentAssistanceCertificate">
+            <visible function="showFileBrowser"/>
+            <collectionSource function="getCurrentFarmerAsCollection"/>
+        </filebrowser>
 
         <submit label="submit.save" action="saveGovernmentAssistanceCertificate"/>
 
