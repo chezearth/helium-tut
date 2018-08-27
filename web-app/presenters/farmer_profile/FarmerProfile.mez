@@ -182,6 +182,14 @@ string saveGovernmentAssistanceCertificate() {
 }
 
 
+string deleteGovernmentAssistanceCertificate() {
+    farmer.governmentAssistanceCertificate = null;
+    farmer.governmentAssistanceCertificateId = null;
+    farmer.documentationProfileUpdatedOn = Mez:now();
+    return null;
+}
+
+
 Farmer[] getCurrentFarmerAsCollection() {
   Farmer[] farmers;
   farmers.append(farmer);

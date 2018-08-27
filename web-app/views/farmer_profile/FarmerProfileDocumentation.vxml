@@ -18,12 +18,23 @@
             </binding>
         </fileupload>
 
+        <submit label="submit.save" action="saveGovernmentAssistanceCertificate"/>
+
+        <info label="info.government_assistance_recipient_certificate_id">
+            <visible function="showFileBrowser"/>
+            <binding variable="farmer">
+                <attribute name="governmentAssistanceCertificateId"/>
+            </binding>
+        </info>
+
         <filebrowser dataAttribute="governmentAssistanceCertificate">
             <visible function="showFileBrowser"/>
             <collectionSource function="getCurrentFarmerAsCollection"/>
         </filebrowser>
 
-        <submit label="submit.save" action="saveGovernmentAssistanceCertificate"/>
+        <button label="button.deleted_government_assistance_recipient_certificate" action="deleteGovernmentAssistanceCertificate">
+            <visible function="showFileBrowser"/>
+        </button>
 
     </view>
 
