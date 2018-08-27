@@ -12,6 +12,12 @@
             <binding variable="certificateId"/>
         </textfield>
 
+        <fileupload label="fileupload.government_assistance_recipient_certificate">
+            <binding variable="farmer">
+                <attribute name="governmentAssistanceCertificate"/>
+            </binding>
+        </fileupload>
+
 
         <submit label="submit.save" action="saveGovernmentAssistanceCertificate"/>
 

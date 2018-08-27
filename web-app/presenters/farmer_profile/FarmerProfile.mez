@@ -30,6 +30,11 @@ string saveGovernmentAssistanceCertificate() {
     return null;
   }
 
+  if(farmer.governmentAssistanceCertificate == null) {
+    Mez:alertError("alert.null_government_assistance_certificate");
+    return null;
+  }
+
   uuid parsedId = Uuid:fromString(certificateId);
 
   if(parsedId == null) {

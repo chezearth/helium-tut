@@ -1,5 +1,6 @@
 action.back = Back
 alert.currently_logged_in = Currently logged in on this account
+alert.null_government_assistance_certificate = You have not uploaded a certificate
 alert.null_government_assistance_certificate_id = You have not entered a certificate ID
 alert.invalid_government_assistance_certificate_id = You have not entered a valid certificate ID
 alert.shop_owner_required = Shop owner required before saving
@@ -46,6 +47,7 @@ datefield.last_shop_visit = Last shop visit:
 enum.STATES.West_Coast = West Coast
 enum.STATES.South_Coast = South Coast
 enum.STATES.Inland = Inland
+fileupload.government_assistance_recipient_certificate = Government certificate:
 fileupload.stock_update_CSV = Stock update CSV:
 info.created_on = Created on:
 info.email_address = E-mail address:
