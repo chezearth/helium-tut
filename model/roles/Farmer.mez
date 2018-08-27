@@ -37,9 +37,14 @@ persistent object Farmer {
   // When last did this farmer visit any shop
   datetime lastShopVisit;
 
+  // Farmer profile documentation
+  uuid governmentAssistanceCertificateId;
+  blob governmentAssistanceCertificate;
+
   // Meta information
   datetime registeredOn;
   datetime updatedOn;
+  datetime documentationProfileUpdatedOn;
   bool deleted;
 
 
@@ -50,6 +55,7 @@ persistent object Farmer {
   @ManyToMany
   Stock cropTypes via farmers;
 
+  // Relationship between farmer and shops for which the farmer would like to receive stock level notifications
   @ManyToMany
   Shop messagingShops via notifiedFarmers;
 

@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../View.xsd">
 
-    <view label="view_heading.farmer_profile" unit="FarmerProfile" init="init">
+    <view label="view_heading.farmer_profile_general" unit="FarmerProfile" init="init">
 
         <action label="action.back" action="backToMenu"/>
 
@@ -72,40 +72,6 @@
             <attribute name="state"/>
           </binding>
         </info>
-
-        <!-- Select box for eligible crop types to link to farmer -->
-        <select label="select.crop_types">
-<!--            <visible variable="showFarmerCropTypes" /> -->
-            <binding variable="cropType"/>
-            <collectionSource function="getEligibleCropTypes">
-                <displayAttribute name="name"/>
-            </collectionSource>
-        </select>
-
-        <!-- Submit button to add selected crop type/stock to farmer -->
-        <submit label="submit.add_crop_type" action="addCropType">
-<!--            <visible variable="showFarmerCropTypes"/> -->
-        </submit>
-
-        <!-- Button to remove all crop types that are linked to farmer -->
-        <submit label="button.remove_all_farmer_crop_types" action="removeAllFarmerCropTypes">
-<!--            <visible variable="showFarmerCropTypes"/> -->
-        </submit>
-
-        <!-- Table to represent the farmer crop  types -->
-        <table title="table_title.farmer_crop_types">
-<!--            <visible variable="showFarmerCropTypes"/> -->
-            <collectionSource function="getFarmerCropTypes"/>
-
-            <column heading="column_heading.name">
-                <attributeName>name</attributeName>
-            </column>
-
-            <rowAction label="button.remove" action="removeFarmerCropType">
-                <binding variable="cropType"/>
-            </rowAction>
-
-        </table>
 
     </view>
 

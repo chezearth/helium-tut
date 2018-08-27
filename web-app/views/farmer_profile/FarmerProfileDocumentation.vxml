@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui xmlns="http://uiprogram.mezzanine.com/View"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../View.xsd">
+
+    <view label="view_heading.farmer_profile_documentation" unit="FarmerProfile" init="init">
+
+        <action label="action.back" action="backToMenu"/>
+
+        <!-- Certificate is stored in an intermediate unit variable to allow manual validation and coversion to uuid -->
+        <textfield label="textfield.government_assistance_recipient_certificate_id">
+            <binding variable="certificateId"/>
+        </textfield>
+
+
+        <submit label="submit.save" action="saveGovernmentAssistanceCertificate"/>
+
+    </view>
+
+</ui>

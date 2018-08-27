@@ -12,7 +12,7 @@ void initMenu() {
   Farmer currentFarmerUser = Farmer:user();
   menuItems.clear();
 
-  // Menu item farmer general profile
+  // Menu item for farmer general profile
   MenuItem generalProfileMenuItem = createMenuItem(
   String:translate("menu_item.farmer_profile_general"),
   DSL_VIEWS.FarmerProfile,
@@ -20,7 +20,7 @@ void initMenu() {
   );
   menuItems.append(generalProfileMenuItem);
 
-  // Menu item farmer crop types profile
+  // Menu item for farmer crop types profile
   MenuItem cropTypeProfileMenuItem = createMenuItem(
     String:translate("menu_item.farmer_profile_crop_type"),
     DSL_VIEWS.FarmerProfileCropTypes,
@@ -28,12 +28,21 @@ void initMenu() {
   );
   menuItems.append(cropTypeProfileMenuItem);
 
+  // Menu item for farmer messaging menu
   MenuItem profileMessagingMenuItem = createMenuItem(
-  String:translate("menu_item.farmer_profile_messaging"),
-  DSL_VIEWS.FarmerProfileMessaging,
-  Strings:concat(currentFarmerUser.messagingProfileUpdatedOn, "")
+    String:translate("menu_item.farmer_profile_messaging"),
+    DSL_VIEWS.FarmerProfileMessaging,
+    Strings:concat(currentFarmerUser.messagingProfileUpdatedOn, "")
   );
   menuItems.append(profileMessagingMenuItem);
+
+  // Menu item for farmer documentation profile
+  MenuItem profileDocumentationMenuItem = createMenuItem(
+    String:translate("menu_item.farmer_profile_documentation"),
+    DSL_VIEWS.FarmerProfileDocumentation,
+    Strings:concat(currentFarmerUser.documentationProfileUpdatedOn, "")
+  );
+  menuItems.append(profileDocumentationMenuItem);
 
 }
 

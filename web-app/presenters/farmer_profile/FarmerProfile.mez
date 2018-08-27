@@ -4,6 +4,8 @@ Farmer farmer;
 Stock cropType;
 Shop messagingShop;
 
+string certificateId;
+
 // bool showFarmerCropTypes;
 
 // string cropTypeTableLable;
@@ -18,6 +20,27 @@ void init() {
 
 Stock[] getFarmerCropTypes() {
   return farmer.cropTypes;
+}
+
+
+string saveGovernmentAssistanceCertificate() {
+
+  if(certificateId == null) {
+    Mez:alertError("alert.null_government_assistance_certificate_id");
+    return null;
+  }
+
+  uuid parsedId = Uuid:fromString(certificateId);
+
+  if(parsedId == null) {
+    Mez:alertError("alert.invalid_government_assistance_certificate_id");
+    return null;
+  }
+
+  farmer.governmentAssistanceCertificateId = parsedId;
+  certificateId = null;
+  return null;
+
 }
 
 
