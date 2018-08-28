@@ -63,6 +63,7 @@ info.first_name = First name:
 info.government_assistance_recipient_certificate_id = Certificate ID:
 info.last_name = Last name:
 info.mobile_number = Mobile number:
+info.selected_shop = Selected shop:
 info.shop = Shop
 info.shop_code = Shop code:
 info.shop_description = Shop description:

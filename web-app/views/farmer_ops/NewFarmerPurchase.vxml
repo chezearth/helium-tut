@@ -26,6 +26,15 @@
             <visible function="showStockTable"/>
         </button>
 
+        <!-- visible once shop has been selected -->
+        <info label="info.selected_shop">
+            <visible function="showStockTable"/>
+            <binding variable="shop">
+                <attribute name="name"/>
+            </binding>
+        </info>
+
+
     </view>
 
 </ui>
