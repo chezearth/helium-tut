@@ -33,6 +33,7 @@ column_heading.longitude = Long
 column_heading.mobile_number = Mobile
 column_heading.name = Name
 column_heading.profile_category = Profile category
+column_heading.purchased_on = When
 column_heading.registered_on = Registered
 column_heading.shop_code = Code
 column_heading.shop_owner = Shop owner

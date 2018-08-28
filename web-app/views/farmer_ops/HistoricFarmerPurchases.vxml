@@ -7,6 +7,13 @@
 
         <action label="action.new_purchase" action="newPurchase"/>
 
+        <table>
+            <collectionSource function="getFarmerUserPurchases"/>
+            <column heading="column_heading.purchased_on">
+                <attributeName>purchasedOn</attributeName>
+            </column>
+        </table>
+
     </view>
 
 </ui>

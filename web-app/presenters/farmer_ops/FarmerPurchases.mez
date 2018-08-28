@@ -66,6 +66,12 @@ bool governmentAssitanceApplicableAndSummary() {
 }
 
 
+FarmerPurchase[] getFarmerUserPurchases() {
+	Farmer farmer = Farmer:user();
+	return farmer.purchases;
+}
+
+
 DSL_VIEWS newPurchase() {
 	return DSL_VIEWS.NewFarmerPurchase;
 }
