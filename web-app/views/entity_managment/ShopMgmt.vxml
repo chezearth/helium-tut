@@ -29,6 +29,12 @@
             </binding>
         </textfield>
 
+        <textfield label="textfield.mobile_number">
+            <binding variable="shop">
+                <attribute name="mobileNumber"/>
+            </binding>
+        </textfield>
+
         <textfield label="textfield.longitude">
             <binding variable="shop">
                 <attribute name="longitude"/>
