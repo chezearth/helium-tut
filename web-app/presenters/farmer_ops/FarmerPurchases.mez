@@ -31,6 +31,12 @@ string selectShop() {
 }
 
 
+string resetPurchase() {
+  init();
+  return null;
+}
+
+
 void resetCost() {
   goodsCost = null;
   governmentAssistanceDiscount = null;

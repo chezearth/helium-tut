@@ -14,6 +14,7 @@ button.deleted_government_assistance_recipient_certificate = Delete
 button.remove = Remove
 button.remove_all_farmer_crop_types = Remove all crops
 button.remove_all_messaging_shops = Remove all messaging shops
+button.reset_purchase = Reset purchase
 button.select = Select
 button.view = View
 checkbox.opt_in_email = Opt in for messaging by email:

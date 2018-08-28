@@ -22,6 +22,10 @@
 
         <submit label="submit.select_shop" action="selectShop"/>
 
+        <button label="button.reset_purchase" action="resetPurchase">
+            <visible function="showStockTable"/>
+        </button>
+
     </view>
 
 </ui>
