@@ -44,6 +44,37 @@ void resetCost() {
 }
 
 
+StockUpdate[] getShopStockItems() {
+  // Stock updates for this shop
+  StockUpdate[] stockUpdates = shop.stockUpdates;
+
+  // Stock that shop has based on stock updates
+  Stock[] stock = Stock:relationshipIn(stockUpdate, stockUpdates);
+
+  // Get the latest stock update for each stock item
+  StockUpdate[] toReturn;
+  for(int i = 0; i < stock.length(); i++) {
+    Stock currentStockItem = stock.get(i);
+    StockUpdate[] stockUpdatesForStockItem = stockUpdates.select(
+      and(
+        relationshipIn(stock, currentStockItem),
+        greaterThan(level, 0)
+      )
+    );
+
+    stockUpdatesForStockItem.sortDesc("stocktakeDate");
+    toReturn.append(stockUpdatesForStockItem.first());
+  }
+
+  return toReturn;
+}
+
+
+string selectItemToBuy() {
+  return null;
+}
+
+
 // Once a shop has been selected, the stock items for this shop can be displayed
 bool showStockTable() {
 	if(shop == null) {

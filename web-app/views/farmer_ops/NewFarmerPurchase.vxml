@@ -34,6 +34,25 @@
             </binding>
         </info>
 
+        <table title="table_title.available_stock">
+            <visible function="showStockTable"/>
+            <collectionSource function="getShopStockItems"/>
+
+            <column heading="column_heading.stock_name">
+                <attributeName>stockName</attributeName>
+            </column>
+            <column heading="column_heading.stock_level">
+                <attributeName>level</attributeName>
+            </column>
+            <column heading="column_heading.price">
+                <attributeName>price</attributeName>
+            </column>
+
+            <rowAction label="button.select" action="selectItemToBuy">
+                <binding variable="selectedStock"/>
+            </rowAction>
+
+        </table>
 
     </view>
 
