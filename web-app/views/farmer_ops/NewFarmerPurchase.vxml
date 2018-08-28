@@ -20,6 +20,8 @@
             </collectionSource>
         </select>
 
+        <submit label="submit.select_shop" action="selectShop"/>
+
     </view>
 
 </ui>

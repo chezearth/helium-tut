@@ -23,6 +23,14 @@ Shop[] getAllShops() {
 }
 
 
+string selectShop() {
+  if(shop == null) {
+    Mez:alertWarn("alert.no_shop_specified");
+  }
+  return null;
+}
+
+
 void resetCost() {
   goodsCost = null;
   governmentAssistanceDiscount = null;
