@@ -54,6 +54,38 @@
 
         </table>
 
+        <!-- visible once shop and stock item has been selected -->
+        <info label="info.selected_stock">
+            <visible function="showPurchaseForm"/>
+            <binding variable="selectedStock">
+                <attribute name="stockName"/>
+            </binding>
+        </info>
+
+        <info label="info.selected_stock_quantity_available">
+            <visible function="showPurchaseForm"/>
+            <binding variable="selectedStock">
+                <attribute name="level"/>
+            </binding>
+        </info>
+
+        <info label="info.selected_stock_price">
+            <visible function="showPurchaseForm"/>
+            <binding variable="selectedStock">
+                <attribute name="price"/>
+            </binding>
+        </info>
+
+        <textfield label="textfield.quantity_to_purchase">
+            <visible function="showPurchaseForm"/>
+            <binding variable="purchaseQuantity"/>
+        </textfield>
+
+        <submit label="submit.calculate_cost" action="calculateCost">
+            <visible function="showPurchaseForm"/>
+        </submit>
+
+
     </view>
 
 </ui>

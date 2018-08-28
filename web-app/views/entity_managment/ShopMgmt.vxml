@@ -98,10 +98,6 @@
             <column heading="column_heading.state">
                 <attributeName>state</attributeName>
             </column>
-<!--            <column heading="column_heading.shop_owner">
-                <attributeName>owner.firstName</attributeName>
-                <attributeName>owner.lastName</attributeName>
-            </column> -->
 
             <rowAction label="button.view" action="viewShop">
                 <binding variable="shop" />

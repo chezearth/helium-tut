@@ -10,7 +10,7 @@ MenuItem[] menuItems;
 void initMenu() {
   menuItems.clear();
 
-  // Menu item for Shop entity managment
+  // Menu item for Shops
   MenuItem shopMenuItem = createMenuItem(
     String:translate("menu_item.shop_entity_management"),
     DSL_VIEWS.ShopMgmt,
@@ -18,7 +18,7 @@ void initMenu() {
   );
   menuItems.append(shopMenuItem);
 
-  // Menu item for Stock entity managment
+  // Menu item for Stock items
   MenuItem stockMenuItem = createMenuItem(
     String:translate("menu_item.stock_entity_managment"),
     DSL_VIEWS.StockMgmt,

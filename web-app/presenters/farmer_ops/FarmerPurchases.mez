@@ -93,6 +93,43 @@ bool showPurchaseForm() {
 }
 
 
+string calculateCost() {
+    // validate quantity
+    if(purchaseQuantity == null) {
+      Mez:alertError("alert.no_quantity_specified");
+      resetCost();
+      return null;
+    }
+
+    if(purchaseQuantity == null || purchaseQuantity <= 0) {
+      Mez:alertError("alert.quantity_greater_than_zero");
+      resetCost();
+      return null;
+    }
+
+    if(purchaseQuantity > selectedStock.level) {
+      Mez:alertError("alert.not_enough_stock");
+      resetCost();
+      return null;
+    }
+
+    goodsCost = purchaseQuantity * selectedStock.price;
+
+    // If the farmer has a government assistance certificate uploaded he is entitled to 20% discount
+    if(farmer.governmentAssistanceCertificate != null) {
+      governmentAssistanceDiscount = goodsCost * 0.2;
+    }
+    else {
+      governmentAssistanceDiscount = 0;
+    }
+
+    finalCost = goodsCost - governmentAssistanceDiscount;
+
+    return null;
+    
+}
+
+
 // Once the purchase quantity has been validated and the price calculated the cost summary can be displayed
 bool showSummary() {
 	if(showPurchaseForm() == false || goodsCost == null) {
