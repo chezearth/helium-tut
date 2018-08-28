@@ -85,6 +85,25 @@
             <visible function="showPurchaseForm"/>
         </submit>
 
+        <!-- visible once the quantity has been validated and the cost has been calculated -->
+        <info label="info.goods_cost">
+            <visible function="showSummary"/>
+            <binding variable="goodsCost"/>
+        </info>
+
+        <info label="info.government_assistance_discount">
+            <visible function="governmentAssitanceApplicableAndSummary"/>
+            <binding variable="governmentAssistanceDiscount"/>
+        </info>
+
+        <info label="info.final_cost">
+            <visible function="showSummary"/>
+            <binding variable="finalCost"/>
+        </info>
+
+        <submit label="submit.make_purchase" action="makePurchase">
+            <visible function="showSummary"/>
+        </submit>
 
     </view>
 

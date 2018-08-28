@@ -126,7 +126,7 @@ string calculateCost() {
     finalCost = goodsCost - governmentAssistanceDiscount;
 
     return null;
-    
+
 }
 
 
@@ -145,6 +145,35 @@ bool governmentAssitanceApplicableAndSummary() {
 		return false;
 	}
 	return true;
+}
+
+
+string makePurchase() {
+
+  // Record the purchase
+  FarmerPurchase farmerPurchase = FarmerPurchase:new();
+  farmerPurchase.purchasedOn = Mez:now();
+  farmerPurchase.quantity = purchaseQuantity;
+  farmerPurchase.unitPrice = selectedStock.price;
+  farmerPurchase.goodsCost = goodsCost;
+  farmerPurchase.discount = governmentAssistanceDiscount;
+  farmerPurchase.finalCost = finalCost;
+  farmerPurchase.farmer = farmer;
+  farmerPurchase.stock = selectedStock.stock;
+  farmerPurchase.save();
+
+  // Make payment
+  farmerPurchase.paymentId = farmer.pay(shop, "KES", finalCost);
+
+  // Make payment with an additional reference
+  /*farmerPurchase.paymentId = farmer.payWithRef(
+    shop, "KES", farmerPurchase.finalCost, farmerPurchase._id,
+    Strings:concat(shop.name, " - ", shop.shopCode)
+  );*/
+
+  Mez:alert("alert.purchase_successful");
+  init();
+  return null;
 }
 
 
