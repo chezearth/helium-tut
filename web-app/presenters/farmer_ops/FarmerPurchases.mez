@@ -1,0 +1,76 @@
+unit FarmerPurchases;
+
+Farmer farmer;
+Shop shop;
+StockUpdate selectedStock;
+int purchaseQuantity;
+decimal goodsCost;
+decimal governmentAssistanceDiscount;
+int finalCost;
+
+
+void init() {
+  farmer = Farmer:user();
+  shop = null;
+  selectedStock = null;
+  purchaseQuantity = null;
+  resetCost();
+}
+
+
+Shop[] getAllShops() {
+	return Shop:equals(deleted, false);
+}
+
+
+void resetCost() {
+  goodsCost = null;
+  governmentAssistanceDiscount = null;
+  finalCost = null;
+}
+
+
+// Once a shop has been selected, the stock items for this shop can be displayed
+bool showStockTable() {
+	if(shop == null) {
+		return false;
+	}
+	return true;
+}
+
+
+// Once a stock item has been selected is can be displayed with a text field for the quantity to purchase
+bool showPurchaseForm() {
+	if(showStockTable() == false || selectedStock == null) {
+		return false;
+	}
+	return true;
+}
+
+
+// Once the purchase quantity has been validated and the price calculated the cost summary can be displayed
+bool showSummary() {
+	if(showPurchaseForm() == false || goodsCost == null) {
+		return false;
+	}
+	return true;
+}
+
+
+// In the case of a farmer with a government assistance certificate the discount related to this should
+bool governmentAssitanceApplicableAndSummary() {
+	if(showSummary() == false || farmer.governmentAssistanceCertificate == null) {
+		return false;
+	}
+	return true;
+}
+
+
+DSL_VIEWS newPurchase() {
+	return DSL_VIEWS.NewFarmerPurchase;
+}
+
+
+DSL_VIEWS historicPurchases() {
+	return DSL_VIEWS.HistoricFarmerPurchases;
+}

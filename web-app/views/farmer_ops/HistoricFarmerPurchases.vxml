@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui xmlns="http://uiprogram.mezzanine.com/View"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../View.xsd">
+
+    <view label="view_heading.historic_purchases" unit="FarmerPurchases">
+
+        <action label="action.new_purchase" action="newPurchase"/>
+
+    </view>
+
+</ui>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui xmlns="http://uiprogram.mezzanine.com/View"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../View.xsd">
+
+    <view label="view_heading.purchase" unit="FarmerPurchases" init="init">
+
+        <action label="action.historic_purchases" action="historicPurchases"/>
+
+        <menuitem label="menu_item.farmer_purchases" order="1" icon="Shop">
+            <userRole>Farmer</userRole>
+        </menuitem>
+
+        <!-- visible by default to select shop to purchase from -->
+        <select label="select.shop">
+            <binding variable="shop"/>
+            <collectionSource function="getAllShops">
+                <displayAttribute name="name"/>
+                <displayAttribute name="shopCode"/>
+            </collectionSource>
+        </select>
+
+    </view>
+
+</ui>

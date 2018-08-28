@@ -9,6 +9,10 @@ persistent object Shop {
   @requiredFieldValidator("validator.required_field")
   string description;
 
+  // mobile number
+  @requiredFieldValidator("validator.required_field")
+  string mobileNumber;
+
   // location
   @requiredFieldValidator("validator.required_field")
   decimal longitude;
