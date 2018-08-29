@@ -1,0 +1,7 @@
+persistent object SupportTicket {
+  datetime receivedTime;
+  string text;
+  string senderNumber;
+  bool spam;
+  bool resolved;
+}
