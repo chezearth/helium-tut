@@ -10,6 +10,13 @@
     			  <userRole>Shop Owner</userRole>
     		</menuitem>
 
+        <map lat="latitude" long="longitude" refreshIntervalSeconds="30">
+            <collectionSource function="getFarmers" />
+            <markerTitle value="getMarkerTitle" />
+            <markerIcon value="getMarkerIcon" />
+            <markerDesc value="getMarkerDescription" />
+        </map>
+
     </view>
 
 </ui>
