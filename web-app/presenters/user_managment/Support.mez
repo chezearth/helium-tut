@@ -1,0 +1,13 @@
+unit Support;
+
+
+@ReceiveSms("Inbound Message Function")
+void receiveSms(string number, string text) {
+  SupportTicket ticket = SupportTicket:new();
+  ticket.receivedTime = Mez:now();
+  ticket.text = text;
+  ticket.senderNumber = number;
+  ticket.resolved = false;
+  ticket.spam = false;
+  ticket.save();
+}
