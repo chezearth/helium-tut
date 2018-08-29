@@ -1,0 +1,26 @@
+unit PriceComparison;
+
+
+Stock[] allStock;
+Stock selectedStock;
+date selectedDate;
+decimal yearlyInflation;
+
+void init() {
+  allStock = getAllStock();
+  if(allStock.length() > 0) {
+    allStock.sortAsc("name");
+    selectedStock = allStock.get(0);
+  }
+  selectedDate = Date:today();
+  yearlyInflation = 6.02;
+}
+
+
+Stock[] getAllStock() {
+  return Stock:equals(deleted, false);
+}
+
+DSL_VIEWS refresh() {
+  return null;
+}
