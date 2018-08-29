@@ -11,3 +11,22 @@ void receiveSms(string number, string text) {
   ticket.spam = false;
   ticket.save();
 }
+
+
+void handleComment() {
+  string do = "nothing";
+}
+
+
+string getTicketTitle(SupportTicket ticket) {
+  return ticket.senderNumber;
+}
+
+string getTicketText(SupportTicket ticket) {
+  return ticket.text;
+}
+
+
+SupportTicket[] getUnresolvedTickets() {
+  return SupportTicket:and(equals(spam, false), equals(resolved, false));
+}

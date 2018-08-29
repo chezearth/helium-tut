@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui xmlns="http://uiprogram.mezzanine.com/View"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://uiprogram.mezzanine.com/View ../View.xsd">
+
+    <view label="view_heading.support" unit="Support">
+
+        <menuitem label="menu_item.support_tickets" icon="Ticket" order="3">
+            <userRole>System Admin</userRole>
+        </menuitem>
+
+        <wall title="wall_title.tickets" commentHandler="handleComment" defaultSort="receivedTime" buttonLabel="wall_button_label.comment">
+            <collectionSource function="getUnresolvedTickets"/>
+            <itemTitle value="getTicketTitle"/>
+            <itemText value="getTicketText"/>
+        </wall>
+    </view>
+
+</ui>
