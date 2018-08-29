@@ -26,6 +26,22 @@
 
       <submit label="submit.refresh" action="refresh" />
 
+      <table>
+          <collectionSource function="getEstimates" />
+          <column heading="column_heading.shop">
+              <attributeName>shopName</attributeName>
+          </column>
+          <column heading="column_heading.last_stocktake_date">
+              <attributeName>lastUpdatedDate</attributeName>
+          </column>
+          <column heading="column_heading.last_stocktake_price">
+              <attributeName>lastUpdatedPrice</attributeName>
+          </column>
+          <column heading="column_heading.estimated_price">
+              <attributeName>estimatedPrice</attributeName>
+          </column>
+      </table>
+
     </view>
 
 </ui>
