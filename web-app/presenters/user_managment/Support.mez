@@ -26,7 +26,28 @@ string getTicketText(SupportTicket ticket) {
   return ticket.text;
 }
 
+datetime getTicketTime(SupportTicket ticket) {
+  return ticket.receivedTime;
+}
+
+
+string getTicketIcon(SupportTicket ticket) {
+  return "Person";
+}
+
 
 SupportTicket[] getUnresolvedTickets() {
   return SupportTicket:and(equals(spam, false), equals(resolved, false));
+}
+
+
+void resolveTicket(SupportTicket ticket) {
+  ticket.resolved = true;
+  ticket.save();
+}
+
+
+void deleteTicket(SupportTicket ticket) {
+  ticket.spam = true;
+  ticket.save();
 }

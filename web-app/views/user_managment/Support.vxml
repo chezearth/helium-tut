@@ -11,9 +11,17 @@
 
         <wall title="wall_title.tickets" commentHandler="handleComment" defaultSort="receivedTime" buttonLabel="wall_button_label.comment">
             <collectionSource function="getUnresolvedTickets"/>
+
             <itemTitle value="getTicketTitle"/>
             <itemText value="getTicketText"/>
+            <itemTime value="getTicketTime"/>
+            <itemIcon value="getTicketIcon"/>
+
+            <itemAction label="wall_action.resolve" action="resolveTicket" />
+            <itemAction label="wall_action.delete" action="deleteTicket" />
+
         </wall>
+        
     </view>
 
 </ui>
