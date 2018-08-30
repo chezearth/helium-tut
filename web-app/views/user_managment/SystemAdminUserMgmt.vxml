@@ -35,6 +35,13 @@
             </binding>
         </textfield>
 
+        <select label="select.custom_role_name">
+            <binding variable="formSystemAdmin">
+                <attribute name="roleName" />
+            </binding>
+            <enum>EN_SYSTEM_ADMIN_ROLE_NAME</enum>
+        </select>
+
         <submit label="submit.save" action="saveUser"/>
 
         <table title="table_title.system_admins" defaultSortColumn="0" defaultSortDirection="ascending">

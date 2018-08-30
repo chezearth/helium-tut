@@ -161,6 +161,7 @@ messaging.email.stock_level_description = Stock level notification
 messaging.email.stock_level_subject = Stock Level
 messaging.sms.message_content = {messageContent}
 select.crop_types = Crop:
+select.custom_role_name = Custom role name:
 select.date_of_stocktake = Date of stock-take:
 select.state = State:
 select.shop = Shop:

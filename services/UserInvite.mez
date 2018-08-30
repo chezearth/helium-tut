@@ -15,12 +15,10 @@ SystemAdmin inviteSystemAdmin() {
   systemAdmin.mobileNumber = "27716735502";
   systemAdmin.emailAddress = "crethman@mezzanineware.com";
   systemAdmin.deleted = false;
+  systemAdmin.roleName = EN_SYSTEM_ADMIN_ROLE_NAME.System_Admin;
 
   // Generate test data for crops
   TestData:generateStockItems();
-
-  // Log some output
-  Mez:log("Running inviteSystemAdmin()");
 
   // Return the new System Admin
   return systemAdmin;

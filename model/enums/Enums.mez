@@ -9,3 +9,8 @@ enum STOCK_TYPE {
   fertilizer,
   crop_seed
 }
+
+enum EN_SYSTEM_ADMIN_ROLE_NAME {
+  System_Admin,
+  Programme_manager
+}
