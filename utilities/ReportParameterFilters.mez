@@ -1,0 +1,30 @@
+unit ReportParameterFilters;
+
+
+date startDate;
+date endDate;
+
+
+// Called when the start date is selected from the report parameter view
+void setStartDate(date startDateParam) {
+  startDate = startDateParam;
+}
+
+
+// Called when the end date is selected from the report parameter view
+void setEndDate(date endDateParam) {
+  endDate = endDateParam;
+}
+
+
+// Used as a collection source from which the shop report parameter can be selected
+Shop[] shopFilter() {
+
+  FarmerPurchase[] purchases = FarmerPurchase:and(
+    lessThanOrEqual(purchasedOn, endDate),
+    greaterThan(purchasedOn, startDate)
+  );
+
+  return Shop:relationshipIn(purchases, purchases);
+  
+}
