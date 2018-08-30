@@ -6,18 +6,21 @@
     {
       "parameterName": "startDate",
       "displayName": "Start date",
-      "type": "date"
+      "type": "date",
+      "searchDestination": "ReportParameterFilters:setStartDate"
     },
     {
       "parameterName": "endDate",
       "displayName": "End date",
-      "type": "date"
+      "type": "date",
+      "searchDestination": "ReportParameterFilters:setEndDate"
     },
     {
       "parameterName": "shopId",
       "displayName": "Shop",
       "type": "uuid",
-      "searchType": "Shop.name"
+      "searchType": "Shop.name",
+      "searchSource": "ReportParameterFilters:shopFilter"
     },
     {
       "parameterName": "minCost",
