@@ -1,0 +1,5 @@
+object PurchaseFrequencyResult {
+  date weekStart;
+  date weekEnd;
+  int count;
+}
