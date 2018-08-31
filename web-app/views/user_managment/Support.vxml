@@ -10,6 +10,7 @@
         </menuitem>
 
         <wall title="wall_title.tickets" commentHandler="handleComment" defaultSort="receivedTime" buttonLabel="wall_button_label.comment">
+
             <collectionSource function="getUnresolvedTickets"/>
 
             <itemTitle value="getTicketTitle"/>
@@ -21,7 +22,10 @@
             <itemAction label="wall_action.delete" action="deleteTicket" />
 
         </wall>
-        
+
+        <button label="button.resolve_all_tickets" action="resolveAllTickets" />
+        <button label="button.mark_all_tickets_as_spam" action="markAllTicketsAsSpam" />
+
     </view>
 
 </ui>
