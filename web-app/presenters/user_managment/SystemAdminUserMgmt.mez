@@ -4,6 +4,9 @@ SystemAdmin[] systemAdmins;
 SystemAdmin selectedSystemAdmin;
 SystemAdmin formSystemAdmin;
 
+string systemAdminFirstName;
+string systemAdminLastName;
+
 bool editing;
 
 
@@ -11,6 +14,20 @@ void init() {
   systemAdmins = SystemAdmin:equals(deleted, false);
   formSystemAdmin = SystemAdmin:new();
   editing = false;
+}
+
+
+void initViewDetails() {
+  if(selectedSystemAdmin._firstNames != null) {
+    systemAdminFirstName = selectedSystemAdmin._firstNames; // Identity object attribute
+  } else {
+    systemAdminFirstName = selectedSystemAdmin.firstName;
+  }
+  if(selectedSystemAdmin._surname != null) {
+    systemAdminLastName = selectedSystemAdmin._surname; // Identity object attribute
+  } else {
+    systemAdminLastName = selectedSystemAdmin.lastName;
+  }
 }
 
 
