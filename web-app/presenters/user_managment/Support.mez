@@ -55,13 +55,18 @@ void deleteTicket(SupportTicket ticket) {
 
 DSL_VIEWS resolveAllTickets() {
 
+  string query = "UPDATE supportticket SET resolved=true WHERE resolved=false and spam=false";
+  int updates = sql:execute(query);
+  Mez:alert("alert.tickets_resolved");
 
   return DSL_VIEWS.Support;
 }
 
 DSL_VIEWS markAllTicketsAsSpam() {
 
-
+  string query = "UPDATE supportticket SET spam=true WHERE spam=false and resolved=false";
+  int updates = sql:execute(query);
+  Mez:alert("alert.tickets_marked_as_spam");
 
   return DSL_VIEWS.Support;
 }
