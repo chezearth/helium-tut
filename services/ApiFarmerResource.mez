@@ -1,0 +1,52 @@
+@POST("vi/farmer/profile/documentation")
+ApiResponse postFarmerDocumetation(ApiFarmerDocumentation farmerDocumentation) {
+
+  // initiate the response
+  ApiResponse response = ApiResponse:new();
+  response.requestReceived = Mez:now();
+
+  // validate the arguments
+  if(farmerDocumentation.farmerMobileNumber == null) {
+    response.success = false;
+    response.message = "Invalid arguments, please specify the farmer mobile number";
+    return response;
+  }
+
+  if(farmerDocumentation.governmentAssistanceCertificateId == null) {
+    response.success = false;
+    response.message = "Invalid arguments, please specify the ID for the government assistance certificate";
+    return response;
+  }
+
+  if(farmerDocumentation.governmentAssistanceCertificate == null) {
+    response.success = false;
+    response.message = "Invalid arguments, please specify the government assistance certificate using a base64 encoded string";
+    return response;
+  }
+
+  // get the farmer for the specified mobile number
+  Farmer farmer = findFarmerWithNumber(farmerDocumentation.farmerMobileNumber);
+  if(farmer == null) {
+    response.success = false;
+    response.message = Strings:concat("A farmer with the specified mobile number ", farmerDocumentation.farmerMobileNumber, " could not be retrieved");
+    return response;
+  }
+
+  farmer.governmentAssistanceCertificateId = farmerDocumentation.governmentAssistanceCertificateId;
+  farmer.governmentAssistanceCertificate = farmerDocumentation.governmentAssistanceCertificate;
+  farmer.save();
+
+  response.requestProcessed = Mez:now();
+  response.success = true;
+  response.message = "Farmer documentation successfully updated";
+
+}
+
+
+Farmer findFarmerWithNumber(string mobileNumber) {
+  Farmer[] farmers = Farmer:equals(mobileNumber, mobileNumber);
+  if(farmers.length() > 0) {
+    return farmers.get(0);
+  }
+  return null;
+}

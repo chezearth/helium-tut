@@ -49,7 +49,7 @@ ApiResponse persistStockUpdate(StockUpdate stockUpdate, ApiResponse apiResponse)
     apiResponse.success = false;
     return apiResponse;
   }
-  
+
   if(stockUpdate.shop == null) {
     apiResponse.message = "Shop not specified";
     apiResponse.success = false;
