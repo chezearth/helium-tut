@@ -1,3 +1,5 @@
+unit ApiFarmerResource;
+
 @POST("vi/farmer/profile/documentation")
 ApiResponse postFarmerDocumetation(ApiFarmerDocumentation farmerDocumentation) {
 
