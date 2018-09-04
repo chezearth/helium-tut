@@ -1,0 +1,78 @@
+unit ApiStockResource;
+
+
+@POST("v1/stock/stockupdate")
+ApiResponse postStockUpdate(StockUpdate stockUpdate) {
+
+  // initiate the response
+  ApiResponse response = ApiResponse:new();
+  response.requestReceived = Mez:now();
+
+  // validate and persist
+  ApiResponse updatedResponse = persistStockUpdate(stockUpdate, response);
+  if(updatedResponse.success == false) {
+    return updatedResponse;
+  }
+
+  // return the result
+  updatedResponse.requestProcessed = Mez:now();
+  return updatedResponse;
+}
+
+
+@POST("v1/stock/stockupdates")
+ApiResponse postStockUpdates(StockUpdate[] stockUpdates) {
+
+  // initiate the response
+  ApiResponse response = ApiResponse:new();
+  response.requestReceived = Mez:now();
+
+  // validate and persist each stock update
+  ApiResponse updatedResponse;
+  foreach(StockUpdate stockUpdate: stockUpdates) {
+    updatedResponse = persistStockUpdate(stockUpdate, response);
+    if(updatedResponse.success == false) {
+      return updatedResponse;
+    }
+  }
+
+  // return the result
+  updatedResponse.requestProcessed = Mez:now();
+  return updatedResponse;
+}
+
+
+ApiResponse persistStockUpdate(StockUpdate stockUpdate, ApiResponse apiResponse) {
+
+  if(stockUpdate.stock == null) {
+    apiResponse.message = "Stock not Specified";
+    apiResponse.success = false;
+    return apiResponse;
+  }
+  
+  if(stockUpdate.shop == null) {
+    apiResponse.message = "Shop not specified";
+    apiResponse.success = false;
+    return apiResponse;
+  }
+
+  if(stockUpdate.level == null
+    || stockUpdate.price == null
+    || stockUpdate.stocktakeDate == null
+    || stockUpdate.stock == null
+    || stockUpdate.shop == null) {
+
+      apiResponse.message = "Invalid stock update request. Please specify the stock level, current price, stocktake date, stock item and shop";
+      apiResponse.success = false;
+      return apiResponse;
+    }
+
+  apiResponse.message = "Success";
+  apiResponse.success = true;
+  Stock stock = stockUpdate.stock;
+  stockUpdate.stockName = stock.name;
+  stockUpdate.save();
+
+  return apiResponse;
+
+}
