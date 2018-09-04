@@ -2,8 +2,10 @@ unit ApiSupportResouce;
 
 @POST("vi/support/ticket")
 void postSupportTicket(SupportTicket supportTicket) {
+
   supportTicket.receivedTime = Mez:now();
   supportTicket.spam = false;
   supportTicket.resolved = false;
   supportTicket.save();
+  
 }
