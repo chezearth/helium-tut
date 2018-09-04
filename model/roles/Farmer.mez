@@ -52,6 +52,7 @@ persistent object Farmer {
 
   datetime cropTypeProfileUpdatedOn;
   datetime messagingProfileUpdatedOn;
+  datetime cropQualityPicturesUpdatedOn;
 
   // Relationship with crop types
   @ManyToMany

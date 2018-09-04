@@ -6,6 +6,10 @@ Shop messagingShop;
 
 string certificateId;
 
+Stock cropPictureFilter;
+CropQualityPicture selectedCropQualityPicture;
+CropQualityPicture cropQualityPicture;
+
 // bool showFarmerCropTypes;
 
 // string cropTypeTableLable;
@@ -15,6 +19,12 @@ void init() {
   farmer = Farmer:user();
   // showFarmerCropTypes = true;
   // cropTypeTableLable = "Hide crop types";
+}
+
+
+void cropQualityPicsInit() {
+  init();
+  cropQualityPicture = CropQualityPicture:new();
 }
 
 
@@ -203,4 +213,23 @@ bool showFileBrowser() {
     return false;
   }
   return true;
+}
+
+
+string applyCropGalleryFilter() {
+  selectedCropQualityPicture = null;
+  cropQualityPicture = CropQualityPicture:new();
+  return null;
+}
+
+
+CropQualityPicture[] getFarmerCropQualityPictures() {
+  CropQualityPicture[] result;
+  if(cropPictureFilter == null) {
+    result = CropQualityPicture:relationshipIn(farmer, farmer);
+  } else {
+    result = CropQualityPicture:and(relationshipIn(farmer, farmer), relationshipIn(cropType, cropPictureFilter));
+  }
+  result.sortAsc("pictureDate");
+  return result;
 }
