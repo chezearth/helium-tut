@@ -233,3 +233,26 @@ CropQualityPicture[] getFarmerCropQualityPictures() {
   result.sortAsc("pictureDate");
   return result;
 }
+
+
+string saveCropQualityPicture() {
+  cropQualityPicture.farmer = farmer;
+  cropQualityPicture.save();
+  cropQualityPicture = CropQualityPicture:new();
+  farmer.cropQualityPicturesUpdatedOn = Mez:now();
+  return null;
+}
+
+
+string editSelectedCropQualityPicture() {
+  cropQualityPicture = selectedCropQualityPicture;
+  return null;
+}
+
+
+string deleteSelectedCropQualityPicture() {
+  CropQualityPicture:delete(selectedCropQualityPicture);
+  cropQualityPicture = CropQualityPicture:new();
+  farmer.cropQualityPicturesUpdatedOn = Mez:now();
+  return null;
+}

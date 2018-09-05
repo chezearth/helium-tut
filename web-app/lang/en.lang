@@ -189,8 +189,10 @@ select.stock_type = Stock type:
 submit.add_crop_type = Add crop
 submit.add_shop_owner = Add shop owner
 submit.add_messaging_shop = Add messaging shop
-submit.apply_filter Apply filter
+submit.apply_filter = Apply filter
 submit.calculate_cost = Calculate cost
+submit.delete_selected = Delete selected
+submit.edit_selected = Edit selected
 submit.make_purchase = Proceed with purchase
 submit.refresh = Refresh
 submit.save = Save

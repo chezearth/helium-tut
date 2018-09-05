@@ -56,6 +56,10 @@
             </collectionSource>
         </select>
 
+        <submit label="submit.save" action="saveCropQualityPicture" />
+        <submit label="submit.edit_selected" action="editSelectedCropQualityPicture" />
+        <submit label="submit.delete_selected" action="deleteSelectedCropQualityPicture" />
+
     </view>
 
 </ui>
